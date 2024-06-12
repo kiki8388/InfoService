@@ -5,7 +5,6 @@ body {
 }
 
 header {
-    background-color: #333;
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -20,7 +19,6 @@ header .logo h1 {
 }
 
 nav {
-    background-color: #333;
     width: 100%;
     padding: 10px 0;
     text-align: center;
@@ -36,29 +34,9 @@ nav {
     width: 100%;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
 main {
     padding: 20px;
     padding-top: 20px; /* Adjust padding to avoid content being hidden behind fixed nav */
-    padding-bottom: 20px;
-    flex: 1;
 }
 
 .main-article {
@@ -78,35 +56,34 @@ main {
 .filter-buttons {
     display: flex;
     justify-content: center;
-  }
+}
   
-  .filter-buttons button {
+/* .filter-buttons button {
     padding: 10px 20px;
     border: none;
-    background-color: #333333;
-    color: white;
     cursor: pointer;
     border-radius: 4px;
     font-size: 16px;
     transition: background-color 0.3s;
-  }
+    color: white;
+} */
   
-  .filter-buttons button:hover {
+/* .filter-buttons button:hover {
     background-color: #272727;
-  }
-  
-  .other-articles {
+} */
+
+.other-articles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-  }
-  
-  .other-articles article {
+}
+
+.other-articles article {
     background: #f4f4f4;
     padding: 16px;
     border-radius: 8px;
     text-align: center;
-  }
+}
 
 .other-articles img {
     width: 100%;
@@ -114,20 +91,45 @@ main {
 }
 
 .no-articles {
-    grid-column: 2;
+    grid-column: 1 / -1; /* Span all columns */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     font-size: 24px;
-  }
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
 footer {
-    background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    bottom: 0;
-    margin-top: auto;
+    position: relative;
+}
+
+.color-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.color-buttons button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+    color: white;
+}
+
+.color-buttons button:hover {
+    background-color: #272727;
 }
