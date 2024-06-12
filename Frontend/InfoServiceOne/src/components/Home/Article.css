@@ -1,0 +1,40 @@
+.article-container {
+    padding: 20px;
+    padding-top: 20px; /* Adjust padding to avoid content being hidden behind fixed nav */
+    padding-bottom: 20px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+  
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .logo {
+    height: 30px;
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+.backButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+.backButton {
+    width: 15%;
+    background-color: #333;
+}
+
+.backButton:hover {
+    background-color: #272727;
+}
