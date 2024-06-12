@@ -156,10 +156,6 @@ const Home: React.FC = () => {
           <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
         </nav>
       </div>
-      <div className="color-buttons">
-        <button onClick={changeAllColors}>Change All Colors</button>
-        <button onClick={changeIndividualColors}>Change Individual Colors</button>
-      </div>
       <main>
         <section className="other-articles">
           {errorMessage && <div className="error-message">{errorMessage}</div>}
@@ -177,6 +173,10 @@ const Home: React.FC = () => {
         </section>
       </main>
       <footer style={{ backgroundColor: footerColor }}>
+        <div className="color-buttons">
+          <button onClick={changeAllColors}>A</button>
+          <button onClick={changeIndividualColors}>I</button>
+        </div>
         <p>&copy; 2024 News Website. All rights reserved.</p>
       </footer>
     </>
