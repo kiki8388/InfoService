@@ -37,6 +37,7 @@ nav {
 main {
     padding: 20px;
     padding-top: 20px; /* Adjust padding to avoid content being hidden behind fixed nav */
+    flex: 1;
 }
 
 .main-article {

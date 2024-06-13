@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-import "./Home.css";
+import "./HomeOne.css";
 
 interface PostData {
   id: string;
@@ -13,7 +13,7 @@ interface PostData {
   views: number;
 }
 
-const Home: React.FC = () => {
+const HomeOne: React.FC = () => {
   const apiURL = "https://localhost:7083/api";
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
@@ -78,7 +78,7 @@ const Home: React.FC = () => {
       await axios.put(`${apiURL}/Post/UpdateViews/${post.id}`);
 
       // Navigate to the article page
-      navigate(`/article`, { state: updatedPost });
+      navigate(`article`, { state: updatedPost });
     } catch (error: any) {
       if (error.response) {
         console.log(error.response);
@@ -98,21 +98,35 @@ const Home: React.FC = () => {
     return words.slice(0, wordLimit).join(' ') + '...';
   };
 
-  const changeAllColors = () => {
+  const chooseColorSchemeOne = () => {
     setHeaderColor('#333333');
     setFooterColor('#333333');
     setButtonColor('#333333');
-    setButtonHoverColor('#272727'); // Set the new hover color here
+    setButtonHoverColor('#272727');
   };
 
-  const changeIndividualColors = () => {
-    setHeaderColor('#FF5733');
-    setFooterColor('#33FF57');
-    setButtonColor('#3357FF');
-    setButtonHoverColor('#FF33FF'); // Set a different hover color here if needed
+  const chooseColorSchemeTwo = () => {
+    setHeaderColor('#333333');
+    setFooterColor('#333333');
+    setButtonColor('#333333');
+    setButtonHoverColor('#272727');
   };
 
-  const FilterButton = styled.button<{ hoverColor: string }>`
+  const chooseColorSchemeThree = () => {
+    setHeaderColor('#333333');
+    setFooterColor('#333333');
+    setButtonColor('#333333');
+    setButtonHoverColor('#272727');
+  };
+
+  const chooseColorSchemeFour = () => {
+    setHeaderColor('#333333');
+    setFooterColor('#333333');
+    setButtonColor('#333333');
+    setButtonHoverColor('#272727');
+  };
+
+  const FilterButton = styled.button<{}>`
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -123,7 +137,7 @@ const Home: React.FC = () => {
     background-color: ${buttonColor};
 
     &:hover {
-      background-color: ${props => props.hoverColor};
+      background-color: ${buttonHoverColor};
     }
   `;
 
@@ -134,26 +148,26 @@ const Home: React.FC = () => {
           <h1>InfoService</h1>
         </div>
         <nav className="filter-buttons">
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('All')}>All</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('World')}>World</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Politics')}>Politics</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Business')}>Business</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Technology')}>Technology</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Arts')}>Arts</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('All')}>All</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('World')}>World</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('Politics')}>Politics</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('Business')}>Business</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('Technology')}>Technology</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('Arts')}>Arts</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
         </nav>
       </header>
       <div className='headerNav' style={{ visibility: visible ? 'visible' : 'hidden', opacity: visible ? 1 : 0, backgroundColor: headerColor }}>
         <nav className='filter-buttons'>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('All')}>All</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('World')}>World</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Politics')}>Politics</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Business')}>Business</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Technology')}>Technology</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Arts')}>Arts</FilterButton>
-          <FilterButton hoverColor={buttonHoverColor} onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('All')}>All</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('World')}>World</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('Politics')}>Politics</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('Business')}>Business</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('Technology')}>Technology</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('Arts')}>Arts</FilterButton>
+          <FilterButton onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
         </nav>
       </div>
       <main>
@@ -174,8 +188,10 @@ const Home: React.FC = () => {
       </main>
       <footer style={{ backgroundColor: footerColor }}>
         <div className="color-buttons">
-          <button onClick={changeAllColors}>A</button>
-          <button onClick={changeIndividualColors}>I</button>
+          <button onClick={chooseColorSchemeOne}></button>
+          <button onClick={chooseColorSchemeTwo}></button>
+          <button onClick={chooseColorSchemeThree}></button>
+          <button onClick={chooseColorSchemeFour}></button>
         </div>
         <p>&copy; 2024 News Website. All rights reserved.</p>
       </footer>
@@ -183,4 +199,4 @@ const Home: React.FC = () => {
   );
 }
 
-export default Home;
+export default HomeOne;

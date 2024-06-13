@@ -1,0 +1,64 @@
+.article-container {
+    padding: 20px;
+    padding-top: 20px; /* Adjust padding to avoid content being hidden behind fixed nav */
+    padding-bottom: 20px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    flex: 1;
+  }
+  
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .logo {
+    height: 30px;
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+.backButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+}
+
+.color-buttons {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.color-buttons button {
+    width: 40px; /* Set width and height to create square buttons */
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+    color: white;
+}
+
+.color-buttons button:hover {
+    background-color: #272727;
+}
