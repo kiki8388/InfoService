@@ -16,19 +16,19 @@ const Start = () => {
                 <div className='Header'>
                     <h3>Choose service</h3>
                 </div>
-                <Fab variant="extended" style={{ width: "30%", backgroundColor: "#E63946", color: "#F1FAEE" }} onClick={() => navigate('homeone')}>
+                <Fab variant="extended" onClick={() => navigate('homeone')}>
                     <NavigationIcon sx={{ mr: 1 }} />
                     Info Service One
                 </Fab>
-                <Fab variant="extended" style={{ width: "30%", backgroundColor: "#E63946", color: "#F1FAEE", marginTop: "1%" }} onClick={() => navigate('hometwo')}>
+                <Fab variant="extended" onClick={() => navigate('hometwo')}>
                     <NavigationIcon sx={{ mr: 1 }} />
                     Info Service Two
                 </Fab>
-                <Fab variant="extended" style={{ width: "30%", backgroundColor: "#E63946", color: "#F1FAEE", marginTop: "1%" }} onClick={() => navigate('homethree')}>
+                <Fab variant="extended" onClick={() => navigate('homethree')}>
                     <NavigationIcon sx={{ mr: 1 }} />
                     Info Service Three
                 </Fab>
-                <Fab variant="extended" style={{ width: "30%", backgroundColor: "#E63946", color: "#F1FAEE", marginTop: "1%" }} onClick={() => navigate('homefour')}>
+                <Fab variant="extended" onClick={() => navigate('homefour')}>
                     <NavigationIcon sx={{ mr: 1 }} />
                     Info Service Four
                 </Fab>
