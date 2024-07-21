@@ -11,7 +11,7 @@ const Start = () => {
     const path = window.location.pathname.split('/');
 
     return (
-        <>
+        <div className='container'>
             <div className='ServiceChoose'>
                 <div className='Header'>
                     <h3>Choose service</h3>
@@ -33,7 +33,7 @@ const Start = () => {
                     Info Service Four
                 </Fab>
             </div>
-        </>
+        </div>
     )
 }
 

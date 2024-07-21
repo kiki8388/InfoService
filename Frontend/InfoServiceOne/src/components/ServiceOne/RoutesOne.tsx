@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import HomeOne from './HomeOne';
 import ArticleOne from './ArticleOne';
 
-const Login = () => {
+const RoutesOne = () => {
 
     return (
         <>
@@ -14,4 +14,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default RoutesOne;

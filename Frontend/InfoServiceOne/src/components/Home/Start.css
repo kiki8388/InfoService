@@ -2,6 +2,11 @@
   background-color: #1a759f;
 }
 
+.container {
+  background-color: #1a759f;
+  min-height: 100vh;
+}
+
 .Header {
     display: flex;
     justify-content: center;

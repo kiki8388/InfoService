@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, Routes } from 'react-router-dom';
 import NotExist from "./components/NotExist/NotExist";
 import Start from "./components/Home/Start";
-import RoutesOne from "./components/ServiceOne/Routes";
+import RoutesOne from "./components/ServiceOne/RoutesOne";
 
 function App() {
   return (

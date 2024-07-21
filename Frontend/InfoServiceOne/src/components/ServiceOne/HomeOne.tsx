@@ -22,6 +22,7 @@ const HomeOne: React.FC = () => {
   const [filteredPosts, setFilteredPosts] = useState<Array<PostData>>([]);
 
   // State for managing colors
+  const [backgroundColor, setBackgroundColor] = useState('#FFF');
   const [headerColor, setHeaderColor] = useState('#333333');
   const [footerColor, setFooterColor] = useState('#333333');
   const [buttonColor, setButtonColor] = useState('#333333');
@@ -99,6 +100,7 @@ const HomeOne: React.FC = () => {
   };
 
   const chooseColorSchemeOne = () => {
+    setBackgroundColor('#FFF');
     setHeaderColor('#333333');
     setFooterColor('#333333');
     setButtonColor('#333333');
@@ -106,6 +108,7 @@ const HomeOne: React.FC = () => {
   };
 
   const chooseColorSchemeTwo = () => {
+    setBackgroundColor('#333333');
     setHeaderColor('#333333');
     setFooterColor('#333333');
     setButtonColor('#333333');
@@ -113,6 +116,7 @@ const HomeOne: React.FC = () => {
   };
 
   const chooseColorSchemeThree = () => {
+    setBackgroundColor('#FFF');
     setHeaderColor('#333333');
     setFooterColor('#333333');
     setButtonColor('#333333');
@@ -120,6 +124,7 @@ const HomeOne: React.FC = () => {
   };
 
   const chooseColorSchemeFour = () => {
+    setBackgroundColor('#FFF');
     setHeaderColor('#333333');
     setFooterColor('#333333');
     setButtonColor('#333333');
@@ -142,7 +147,7 @@ const HomeOne: React.FC = () => {
   `;
 
   return (
-    <>
+    <div className='container' style={{ backgroundColor: backgroundColor }}>
       <header style={{ backgroundColor: headerColor }}>
         <div className="logo">
           <h1>InfoService</h1>
@@ -195,7 +200,7 @@ const HomeOne: React.FC = () => {
         </div>
         <p>&copy; 2024 News Website. All rights reserved.</p>
       </footer>
-    </>
+    </div>
   );
 }
 

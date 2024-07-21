@@ -18,12 +18,14 @@ const ArticleOne: React.FC = () => {
   const articleData = location.state as ArticleData;
   const navigate = useNavigate();
 
+  const [backgroundColor, setBackgroundColor] = useState('#FFF');
   const [headerColor, setHeaderColor] = useState('#333333');
   const [footerColor, setFooterColor] = useState('#333333');
   const [buttonColor, setButtonColor] = useState('#333333');
   const [buttonHoverColor, setButtonHoverColor] = useState('#272727');
 
   const chooseColorSchemeOne = () => {
+    setBackgroundColor('#FFF');
     setHeaderColor('#333333');
     setFooterColor('#333333');
     setButtonColor('#333333');
@@ -31,6 +33,7 @@ const ArticleOne: React.FC = () => {
   };
 
   const chooseColorSchemeTwo = () => {
+    setBackgroundColor('#333333');
     setHeaderColor('#333333');
     setFooterColor('#333333');
     setButtonColor('#333333');
@@ -38,6 +41,7 @@ const ArticleOne: React.FC = () => {
   };
 
   const chooseColorSchemeThree = () => {
+    setBackgroundColor('#FFF');
     setHeaderColor('#333333');
     setFooterColor('#333333');
     setButtonColor('#333333');
@@ -45,6 +49,7 @@ const ArticleOne: React.FC = () => {
   };
 
   const chooseColorSchemeFour = () => {
+    setBackgroundColor('#FFF');
     setHeaderColor('#333333');
     setFooterColor('#333333');
     setButtonColor('#333333');
@@ -67,15 +72,17 @@ const ArticleOne: React.FC = () => {
             <h1>InfoService</h1>
         </div>
     </header>
-    <div className="article-container">
-      <h1>{articleData.title}</h1>
-      <p>{articleData.content}</p>
-      <p>Category: {articleData.category}</p>
-      <p>Author: {articleData.author}</p>
-      <p>Views: {articleData.views}</p>
-    </div>
-    <div className='backButtonContainer'>
-        <StyledButton className="backButton" variant='contained' onClick={() => navigate(-1)}>Back</StyledButton>
+    <div className='container' style={{backgroundColor: backgroundColor}}>
+      <div className="article-container">
+        <h1>{articleData.title}</h1>
+        <p>{articleData.content}</p>
+        <p>Category: {articleData.category}</p>
+        <p>Author: {articleData.author}</p>
+        <p>Views: {articleData.views}</p>
+      </div>
+      <div className='backButtonContainer'>
+          <StyledButton className="backButton" variant='contained' onClick={() => navigate(-1)}>Back</StyledButton>
+      </div>
     </div>
     <footer style={{ backgroundColor: footerColor }}>
       <div className="color-buttons">
