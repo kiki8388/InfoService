@@ -66,13 +66,13 @@ const ArticleOne: React.FC = () => {
   `;
 
   return (
-    <>
+    <div className='container' style={{backgroundColor: backgroundColor}}>
     <header>
         <div className="logo">
             <h1>InfoService</h1>
         </div>
     </header>
-    <div className='container' style={{backgroundColor: backgroundColor}}>
+    
       <div className="article-container">
         <h1>{articleData.title}</h1>
         <p>{articleData.content}</p>
@@ -83,7 +83,7 @@ const ArticleOne: React.FC = () => {
       <div className='backButtonContainer'>
           <StyledButton className="backButton" variant='contained' onClick={() => navigate(-1)}>Back</StyledButton>
       </div>
-    </div>
+   
     <footer style={{ backgroundColor: footerColor }}>
       <div className="color-buttons">
         <button onClick={chooseColorSchemeOne}></button>
@@ -93,7 +93,7 @@ const ArticleOne: React.FC = () => {
       </div>
       <p>&copy; 2024 News Website. All rights reserved.</p>
     </footer>
-    </>
+    </div>
   );
 };
 
