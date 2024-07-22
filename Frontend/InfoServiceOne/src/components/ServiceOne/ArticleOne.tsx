@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import "./ArticleOne.css";
-import styled from 'styled-components';
+import { styled } from '@mui/system';
 
 interface ArticleData {
   id: string;
@@ -18,50 +18,75 @@ const ArticleOne: React.FC = () => {
   const articleData = location.state as ArticleData;
   const navigate = useNavigate();
 
-  const [backgroundColor, setBackgroundColor] = useState('#FFF');
-  const [headerColor, setHeaderColor] = useState('#333333');
-  const [footerColor, setFooterColor] = useState('#333333');
-  const [buttonColor, setButtonColor] = useState('#333333');
-  const [buttonHoverColor, setButtonHoverColor] = useState('#272727');
+  const [backgroundColor, setBackgroundColor] = useState('white');
+  const [headerColor, setHeaderColor] = useState('white');
+  const [headerBackgroundColor, setHeaderBackgroundColor] = useState('#333333');
+  const [articleContainerColor, setArticleContainerColor] = useState('black');
+  const [articleContainerBackgroundColor, setArticleContainerBackgroundColor] = useState('white');
+  const [backButtonColor, setBackButtonColor] = useState('white');
+  const [backButtonBackgroundColor, setBackButtonBackgroundColor] = useState('#333333');
+  const [backButtonHoverColor, setBackButtonHoverColor] = useState('#272727');
+  const [footerColor, setFooterColor] = useState('white');
+  const [footerBackgroundColor, setFooterBackgroundColor] = useState('#333333');
 
   const chooseColorSchemeOne = () => {
-    setBackgroundColor('#FFF');
-    setHeaderColor('#333333');
-    setFooterColor('#333333');
-    setButtonColor('#333333');
-    setButtonHoverColor('#272727');
+    setBackgroundColor('white');
+    setHeaderColor('white');
+    setHeaderBackgroundColor('#333333');
+    setArticleContainerColor('black');
+    setArticleContainerBackgroundColor('white');
+    setBackButtonColor('white');
+    setBackButtonBackgroundColor('#333333');
+    setBackButtonHoverColor('#272727');
+    setFooterColor('white');
+    setFooterBackgroundColor('#333333');
   };
 
   const chooseColorSchemeTwo = () => {
-    setBackgroundColor('#333333');
-    setHeaderColor('#333333');
-    setFooterColor('#333333');
-    setButtonColor('#333333');
-    setButtonHoverColor('#272727');
+    setBackgroundColor('white');
+    setHeaderColor('white');
+    setHeaderBackgroundColor('#333333');
+    setArticleContainerColor('black');
+    setArticleContainerBackgroundColor('white');
+    setBackButtonColor('white');
+    setBackButtonBackgroundColor('#333333');
+    setBackButtonHoverColor('#272727');
+    setFooterColor('white');
+    setFooterBackgroundColor('#333333');
   };
 
   const chooseColorSchemeThree = () => {
-    setBackgroundColor('#FFF');
-    setHeaderColor('#333333');
-    setFooterColor('#333333');
-    setButtonColor('#333333');
-    setButtonHoverColor('#272727');
+    setBackgroundColor('white');
+    setHeaderColor('white');
+    setHeaderBackgroundColor('#333333');
+    setArticleContainerColor('black');
+    setArticleContainerBackgroundColor('white');
+    setBackButtonColor('white');
+    setBackButtonBackgroundColor('#333333');
+    setBackButtonHoverColor('#272727');
+    setFooterColor('white');
+    setFooterBackgroundColor('#333333');
   };
 
   const chooseColorSchemeFour = () => {
-    setBackgroundColor('#FFF');
-    setHeaderColor('#333333');
-    setFooterColor('#333333');
-    setButtonColor('#333333');
-    setButtonHoverColor('#272727');
+    setBackgroundColor('white');
+    setHeaderColor('white');
+    setHeaderBackgroundColor('#333333');
+    setArticleContainerColor('black');
+    setArticleContainerBackgroundColor('white');
+    setBackButtonColor('white');
+    setBackButtonBackgroundColor('#333333');
+    setBackButtonHoverColor('#272727');
+    setFooterColor('white');
+    setFooterBackgroundColor('#333333');
   };
 
   const StyledButton = styled(Button)`
     width: 15%;
-    background-color: #333333;
+    background-color: ${backButtonBackgroundColor};
 
     &:hover {
-      background-color: #272727;
+      background-color: ${backButtonHoverColor};
     }
   `;
 
@@ -73,7 +98,7 @@ const ArticleOne: React.FC = () => {
         </div>
     </header>
     
-      <div className="article-container">
+      <div className="articleContainer">
         <h1>{articleData.title}</h1>
         <p>{articleData.content}</p>
         <p>Category: {articleData.category}</p>
@@ -84,7 +109,7 @@ const ArticleOne: React.FC = () => {
           <StyledButton className="backButton" variant='contained' onClick={() => navigate(-1)}>Back</StyledButton>
       </div>
    
-    <footer style={{ backgroundColor: footerColor }}>
+    <footer style={{ backgroundColor: footerBackgroundColor }}>
       <div className="color-buttons">
         <button onClick={chooseColorSchemeOne}></button>
         <button onClick={chooseColorSchemeTwo}></button>

@@ -22,11 +22,16 @@ const HomeOne: React.FC = () => {
   const [filteredPosts, setFilteredPosts] = useState<Array<PostData>>([]);
 
   // State for managing colors
-  const [backgroundColor, setBackgroundColor] = useState('#FFF');
-  const [headerColor, setHeaderColor] = useState('#333333');
-  const [footerColor, setFooterColor] = useState('#333333');
-  const [buttonColor, setButtonColor] = useState('#333333');
-  const [buttonHoverColor, setButtonHoverColor] = useState('#272727');
+  const [backgroundColor, setBackgroundColor] = useState('white');
+  const [headerColor, setHeaderColor] = useState('white');
+  const [headerBackgroundColor, setHeaderBackgroundColor] = useState('#333333');
+  const [navButtonColor, setNavButtonColor] = useState('white');
+  const [navButtonBackgroundColor, setNavButtonBackgroundColor] = useState('#333333');
+  const [navButtonHoverColor, setNavButtonHoverColor] = useState('#272727');
+  const [articleColor, setArticleColor] = useState('black');
+  const [articleBackgroundColor, setArticleBackgroundColor] = useState('#f4f4f4');
+  const [footerColor, setFooterColor] = useState('white');
+  const [footerBackgroundColor, setFooterBackgroundColor] = useState('#333333');
 
   const handlePosts = async () => {
     setPostsData([]);
@@ -100,35 +105,55 @@ const HomeOne: React.FC = () => {
   };
 
   const chooseColorSchemeOne = () => {
-    setBackgroundColor('#FFF');
-    setHeaderColor('#333333');
-    setFooterColor('#333333');
-    setButtonColor('#333333');
-    setButtonHoverColor('#272727');
+    setBackgroundColor('white');
+    setHeaderColor('white');
+    setHeaderBackgroundColor('#333333');
+    setNavButtonColor('white');
+    setNavButtonBackgroundColor('#333333');
+    setNavButtonHoverColor('#272727');
+    setArticleColor('black');
+    setArticleBackgroundColor('#f4f4f4');
+    setFooterColor('white');
+    setFooterBackgroundColor('#333333');
   };
 
   const chooseColorSchemeTwo = () => {
-    setBackgroundColor('#333333');
-    setHeaderColor('#333333');
-    setFooterColor('#333333');
-    setButtonColor('#333333');
-    setButtonHoverColor('#272727');
+    setBackgroundColor('white');
+    setHeaderColor('white');
+    setHeaderBackgroundColor('#333333');
+    setNavButtonColor('white');
+    setNavButtonBackgroundColor('#333333');
+    setNavButtonHoverColor('#272727');
+    setArticleColor('black');
+    setArticleBackgroundColor('#f4f4f4');
+    setFooterColor('white');
+    setFooterBackgroundColor('#333333');
   };
 
   const chooseColorSchemeThree = () => {
-    setBackgroundColor('#FFF');
-    setHeaderColor('#333333');
-    setFooterColor('#333333');
-    setButtonColor('#333333');
-    setButtonHoverColor('#272727');
+    setBackgroundColor('white');
+    setHeaderColor('white');
+    setHeaderBackgroundColor('#333333');
+    setNavButtonColor('white');
+    setNavButtonBackgroundColor('#333333');
+    setNavButtonHoverColor('#272727');
+    setArticleColor('black');
+    setArticleBackgroundColor('#f4f4f4');
+    setFooterColor('white');
+    setFooterBackgroundColor('#333333');
   };
 
   const chooseColorSchemeFour = () => {
-    setBackgroundColor('#FFF');
-    setHeaderColor('#333333');
-    setFooterColor('#333333');
-    setButtonColor('#333333');
-    setButtonHoverColor('#272727');
+    setBackgroundColor('white');
+    setHeaderColor('white');
+    setHeaderBackgroundColor('#333333');
+    setNavButtonColor('white');
+    setNavButtonBackgroundColor('#333333');
+    setNavButtonHoverColor('#272727');
+    setArticleColor('black');
+    setArticleBackgroundColor('#f4f4f4');
+    setFooterColor('white');
+    setFooterBackgroundColor('#333333');
   };
 
   const FilterButton = styled.button<{}>`
@@ -139,16 +164,16 @@ const HomeOne: React.FC = () => {
     font-size: 16px;
     transition: background-color 0.3s;
     color: white;
-    background-color: ${buttonColor};
+    background-color: ${navButtonBackgroundColor};
 
     &:hover {
-      background-color: ${buttonHoverColor};
+      background-color: ${navButtonHoverColor};
     }
   `;
 
   return (
     <div className='container' style={{ backgroundColor: backgroundColor }}>
-      <header style={{ backgroundColor: headerColor }}>
+      <header style={{ color: headerColor, backgroundColor: headerBackgroundColor }}>
         <div className="logo">
           <h1>InfoService</h1>
         </div>
@@ -163,7 +188,7 @@ const HomeOne: React.FC = () => {
           <FilterButton onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
         </nav>
       </header>
-      <div className='headerNav' style={{ visibility: visible ? 'visible' : 'hidden', opacity: visible ? 1 : 0, backgroundColor: headerColor }}>
+      <div className='headerNav' style={{ visibility: visible ? 'visible' : 'hidden', opacity: visible ? 1 : 0, color: headerColor, backgroundColor: headerBackgroundColor }}>
         <nav className='filter-buttons'>
           <FilterButton onClick={() => filterPostsByCategory('All')}>All</FilterButton>
           <FilterButton onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
@@ -182,7 +207,7 @@ const HomeOne: React.FC = () => {
             <div className="no-articles">No articles</div>
           ) : (
             filteredPosts.map(post => (
-              <article key={post.id} onClick={() => handleArticleClick(post)}>
+              <article style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
                 <img src="https://via.placeholder.com/400x200" alt="Article Image" />
                 <h3>{post.title}</h3>
                 <p>{truncateContent(post.content, 20)}</p>
@@ -191,7 +216,7 @@ const HomeOne: React.FC = () => {
           )}
         </section>
       </main>
-      <footer style={{ backgroundColor: footerColor }}>
+      <footer style={{ backgroundColor: footerBackgroundColor }}>
         <div className="color-buttons">
           <button onClick={chooseColorSchemeOne}></button>
           <button onClick={chooseColorSchemeTwo}></button>

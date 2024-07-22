@@ -2,9 +2,10 @@
   background-color: #1a759f;
 }
 
-.container {
+.startContainer {
   background-color: #1a759f;
   min-height: 100vh;
+  align-content: center;
 }
 
 .Header {

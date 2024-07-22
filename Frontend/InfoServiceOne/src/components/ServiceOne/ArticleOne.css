@@ -13,7 +13,7 @@ html, body {
     box-sizing: border-box;
 }
 
-.article-container {
+.articleContainer {
     padding: 20px;
     width: 70%;
     text-align: justify;
