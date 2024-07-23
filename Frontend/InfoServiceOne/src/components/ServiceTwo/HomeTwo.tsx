@@ -187,19 +187,16 @@ const HomeTwo: React.FC = () => {
           <FilterButton onClick={() => filterPostsByCategory('Arts')}>Arts</FilterButton>
           <FilterButton onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
         </nav>
+        <footer className="footerTwo" style={{ backgroundColor: footerBackgroundColor }}>
+          <div className="colorButtonsTwo">
+            <button onClick={chooseColorSchemeOne}></button>
+            <button onClick={chooseColorSchemeTwo}></button>
+            <button onClick={chooseColorSchemeThree}></button>
+            <button onClick={chooseColorSchemeFour}></button>
+          </div>        
+        </footer>
+        <p>&copy; 2024 News Website. All rights reserved.</p>
       </header>
-      <div className='headerNavTwo' style={{ visibility: visible ? 'visible' : 'hidden', opacity: visible ? 1 : 0, color: headerColor, backgroundColor: headerBackgroundColor }}>
-        <nav className='filterButtonsTwo'>
-          <FilterButton onClick={() => filterPostsByCategory('All')}>All</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('World')}>World</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Politics')}>Politics</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Business')}>Business</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Technology')}>Technology</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Arts')}>Arts</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
-        </nav>
-      </div>
       <main className='mainTwo'>
         <section className="otherArticlesTwo">
           {errorMessage && <div className="errorMessage">{errorMessage}</div>}
@@ -216,15 +213,6 @@ const HomeTwo: React.FC = () => {
           )}
         </section>
       </main>
-      <footer className="footerTwo" style={{ backgroundColor: footerBackgroundColor }}>
-        <div className="colorButtonsTwo">
-          <button onClick={chooseColorSchemeOne}></button>
-          <button onClick={chooseColorSchemeTwo}></button>
-          <button onClick={chooseColorSchemeThree}></button>
-          <button onClick={chooseColorSchemeFour}></button>
-        </div>
-        <p>&copy; 2024 News Website. All rights reserved.</p>
-      </footer>
     </div>
   );
 }

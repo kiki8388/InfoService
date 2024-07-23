@@ -91,26 +91,26 @@ const ArticleTwo: React.FC = () => {
   `;
 
   return (
-    <div className='containerTwo' style={{backgroundColor: backgroundColor}}>
-    <header className='headerTwo'>
-        <div className="logoTwo">
+    <div className='containerTwoArt' style={{backgroundColor: backgroundColor}}>
+    <header className='headerTwoArt'>
+        <div className="logoTwoArt">
             <h1>InfoService</h1>
         </div>
     </header>
     
-      <div className="articleContainerTwo">
+      <div className="articleContainerTwoArt">
         <h1>{articleData.title}</h1>
         <p>{articleData.content}</p>
         <p>Category: {articleData.category}</p>
         <p>Author: {articleData.author}</p>
         <p>Views: {articleData.views}</p>
       </div>
-      <div className='backButtonContainerTwo'>
+      <div className='backButtonContainerTwoArt'>
           <StyledButton className="backButton" variant='contained' onClick={() => navigate(-1)}>Back</StyledButton>
       </div>
    
-    <footer className='footerTwo' style={{ backgroundColor: footerBackgroundColor }}>
-      <div className="colorButtonsTwo">
+    <footer className='footerTwoArt' style={{ backgroundColor: footerBackgroundColor }}>
+      <div className="colorButtonsTwoArt">
         <button onClick={chooseColorSchemeOne}></button>
         <button onClick={chooseColorSchemeTwo}></button>
         <button onClick={chooseColorSchemeThree}></button>

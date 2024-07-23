@@ -4,7 +4,7 @@ html, body {
     padding: 0;
 }
 
-.containerTwo {
+.containerTwoArt {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center the content vertically */
@@ -13,7 +13,7 @@ html, body {
     box-sizing: border-box;
 }
 
-.articleContainerTwo {
+.articleContainerTwoArt {
     padding: 20px;
     width: 70%;
     text-align: justify;
@@ -22,7 +22,7 @@ html, body {
     align-items: center;
 }
 
-.headerTwo {
+.headerTwoArt {
     background-color: #333;
     color: white;
     padding: 10px 0;
@@ -30,15 +30,15 @@ html, body {
     width: 100%;
 }
 
-.headerTwo .logoTwo {
+.headerTwoArt .logoTwoArt {
     height: 30px;
 }
 
-.headerTwo .logoTwo h1 {
+.headerTwoArt .logoTwoArt h1 {
     margin: 0;
 }
 
-.backButtonContainerTwo {
+.backButtonContainerTwoArt {
     display: flex;
     justify-content: center;
     margin-top: 2%;
@@ -46,7 +46,7 @@ html, body {
     width: 100%;
 }
 
-.footerTwo {
+.footerTwoArt {
     color: white;
     text-align: center;
     width: 100%;
@@ -55,7 +55,7 @@ html, body {
     margin-top: auto; /* Push the footer to the bottom */
 }
 
-.colorButtonsTwo {
+.colorButtonsTwoArt {
     display: flex;
     justify-content: flex-end;
     position: absolute;
@@ -63,7 +63,7 @@ html, body {
     bottom: 20px;
 }
 
-.colorButtonsTwo button {
+.colorButtonsTwoArt button {
     width: 40px;
     height: 40px;
     border: none;
@@ -75,6 +75,6 @@ html, body {
     color: white;
 }
 
-.colorButtonsTwo button:hover {
+.colorButtonsTwoArt button:hover {
     background-color: #272727;
 }
