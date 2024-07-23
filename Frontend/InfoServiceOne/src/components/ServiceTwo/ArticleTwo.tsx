@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import "./ArticleOne.css";
+import "./ArticleTwo.css";
 import { styled } from '@mui/system';
 
 interface ArticleData {
@@ -13,7 +13,7 @@ interface ArticleData {
   views: number;
 }
 
-const ArticleOne: React.FC = () => {
+const ArticleTwo: React.FC = () => {
   const location = useLocation();
   const articleData = location.state as ArticleData;
   const navigate = useNavigate();
@@ -91,26 +91,26 @@ const ArticleOne: React.FC = () => {
   `;
 
   return (
-    <div className='containerOne' style={{backgroundColor: backgroundColor}}>
-    <header className='headerOne'>
-        <div className="logoOne">
+    <div className='containerTwo' style={{backgroundColor: backgroundColor}}>
+    <header className='headerTwo'>
+        <div className="logoTwo">
             <h1>InfoService</h1>
         </div>
     </header>
     
-      <div className="articleContainerOne">
+      <div className="articleContainerTwo">
         <h1>{articleData.title}</h1>
         <p>{articleData.content}</p>
         <p>Category: {articleData.category}</p>
         <p>Author: {articleData.author}</p>
         <p>Views: {articleData.views}</p>
       </div>
-      <div className='backButtonContainerOne'>
+      <div className='backButtonContainerTwo'>
           <StyledButton className="backButton" variant='contained' onClick={() => navigate(-1)}>Back</StyledButton>
       </div>
    
-    <footer className='footerOne' style={{ backgroundColor: footerBackgroundColor }}>
-      <div className="colorButtonsOne">
+    <footer className='footerTwo' style={{ backgroundColor: footerBackgroundColor }}>
+      <div className="colorButtonsTwo">
         <button onClick={chooseColorSchemeOne}></button>
         <button onClick={chooseColorSchemeTwo}></button>
         <button onClick={chooseColorSchemeThree}></button>
@@ -122,4 +122,4 @@ const ArticleOne: React.FC = () => {
   );
 };
 
-export default ArticleOne;
+export default ArticleTwo;

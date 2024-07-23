@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-import "./HomeOne.css";
+import "./HomeTwo.css";
 
 interface PostData {
   id: string;
@@ -13,7 +13,7 @@ interface PostData {
   views: number;
 }
 
-const HomeOne: React.FC = () => {
+const HomeTwo: React.FC = () => {
   const apiURL = "https://localhost:7083/api";
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
@@ -172,12 +172,12 @@ const HomeOne: React.FC = () => {
   `;
 
   return (
-    <div className='containerOne' style={{ backgroundColor: backgroundColor }}>
-      <header className="headerOne" style={{ color: headerColor, backgroundColor: headerBackgroundColor }}>
-        <div className="logoOne">
+    <div className='containerTwo' style={{ backgroundColor: backgroundColor }}>
+      <header className="headerTwo" style={{ color: headerColor, backgroundColor: headerBackgroundColor }}>
+        <div className="logoTwo">
           <h1>InfoService</h1>
         </div>
-        <nav className="filterButtonsOne">
+        <nav className="filterButtonsTwo">
           <FilterButton onClick={() => filterPostsByCategory('All')}>All</FilterButton>
           <FilterButton onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
           <FilterButton onClick={() => filterPostsByCategory('World')}>World</FilterButton>
@@ -188,8 +188,8 @@ const HomeOne: React.FC = () => {
           <FilterButton onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
         </nav>
       </header>
-      <div className='headerNavOne' style={{ visibility: visible ? 'visible' : 'hidden', opacity: visible ? 1 : 0, color: headerColor, backgroundColor: headerBackgroundColor }}>
-        <nav className='filterButtonsOne'>
+      <div className='headerNavTwo' style={{ visibility: visible ? 'visible' : 'hidden', opacity: visible ? 1 : 0, color: headerColor, backgroundColor: headerBackgroundColor }}>
+        <nav className='filterButtonsTwo'>
           <FilterButton onClick={() => filterPostsByCategory('All')}>All</FilterButton>
           <FilterButton onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
           <FilterButton onClick={() => filterPostsByCategory('World')}>World</FilterButton>
@@ -200,14 +200,14 @@ const HomeOne: React.FC = () => {
           <FilterButton onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
         </nav>
       </div>
-      <main className='mainOne'>
-        <section className="otherArticlesOne">
+      <main className='mainTwo'>
+        <section className="otherArticlesTwo">
           {errorMessage && <div className="errorMessage">{errorMessage}</div>}
           {filteredPosts.length === 0 ? (
-            <div className="noArticlesOne">No articles</div>
+            <div className="noArticlesTwo">No articles</div>
           ) : (
             filteredPosts.map(post => (
-              <article className='articleOne' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+              <article className='articleTwo' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
                 <img src="https://via.placeholder.com/400x200" alt="Article Image" />
                 <h3>{post.title}</h3>
                 <p>{truncateContent(post.content, 20)}</p>
@@ -216,8 +216,8 @@ const HomeOne: React.FC = () => {
           )}
         </section>
       </main>
-      <footer className="footerOne" style={{ backgroundColor: footerBackgroundColor }}>
-        <div className="colorButtonsOne">
+      <footer className="footerTwo" style={{ backgroundColor: footerBackgroundColor }}>
+        <div className="colorButtonsTwo">
           <button onClick={chooseColorSchemeOne}></button>
           <button onClick={chooseColorSchemeTwo}></button>
           <button onClick={chooseColorSchemeThree}></button>
@@ -229,4 +229,4 @@ const HomeOne: React.FC = () => {
   );
 }
 
-export default HomeOne;
+export default HomeTwo;

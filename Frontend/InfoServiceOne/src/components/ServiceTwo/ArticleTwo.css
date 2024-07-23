@@ -4,7 +4,7 @@ html, body {
     padding: 0;
 }
 
-.containerOne {
+.containerTwo {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center the content vertically */
@@ -13,7 +13,7 @@ html, body {
     box-sizing: border-box;
 }
 
-.articleContainerOne {
+.articleContainerTwo {
     padding: 20px;
     width: 70%;
     text-align: justify;
@@ -22,7 +22,7 @@ html, body {
     align-items: center;
 }
 
-.headerOne {
+.headerTwo {
     background-color: #333;
     color: white;
     padding: 10px 0;
@@ -30,15 +30,15 @@ html, body {
     width: 100%;
 }
 
-.headerOne .logoOne {
-    height: 20%;
+.headerTwo .logoTwo {
+    height: 30px;
 }
 
-.headerOne .logoOne h1 {
+.headerTwo .logoTwo h1 {
     margin: 0;
 }
 
-.backButtonContainerOne {
+.backButtonContainerTwo {
     display: flex;
     justify-content: center;
     margin-top: 2%;
@@ -46,7 +46,7 @@ html, body {
     width: 100%;
 }
 
-.footerOne {
+.footerTwo {
     color: white;
     text-align: center;
     width: 100%;
@@ -55,7 +55,7 @@ html, body {
     margin-top: auto; /* Push the footer to the bottom */
 }
 
-.colorButtonsOne {
+.colorButtonsTwo {
     display: flex;
     justify-content: flex-end;
     position: absolute;
@@ -63,7 +63,7 @@ html, body {
     bottom: 20px;
 }
 
-.colorButtonsOne button {
+.colorButtonsTwo button {
     width: 40px;
     height: 40px;
     border: none;
@@ -75,6 +75,6 @@ html, body {
     color: white;
 }
 
-.colorButtonsOne button:hover {
+.colorButtonsTwo button:hover {
     background-color: #272727;
 }
