@@ -11,8 +11,6 @@ body {
 .containerTwo {
     display: flex;
     flex-direction: row;
-    justify-content: center; /* Center the content vertically */
-    align-items: center; /* Center the content horizontally */
     min-height: 100vh;
     box-sizing: border-box;
 }
@@ -21,11 +19,13 @@ body {
     color: white;
     text-align: center;
     width: 20%;
-    height: 100vh;
+    min-height: 118vh;
+    position: fixed;
 }
 
 .headerTwo .logoTwo {
     height: 30px;
+    margin-top: 5%;
 }
 
 .headerTwo .logoTwo h1 {
@@ -36,6 +36,8 @@ body {
     width: 100%;
     padding: 10px 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .headerNavTwo {
@@ -52,6 +54,8 @@ body {
     padding: 20px;
     padding-top: 20px; /* Adjust padding to avoid content being hidden behind fixed nav */
     flex: 1;
+    max-width: 80%;
+    margin-left: 20%;
 }
 
 .mainArticleTwo {
@@ -71,11 +75,12 @@ body {
 .filterButtonsTwo {
     display: flex;
     justify-content: center;
+    margin-top: 5%;
 }
 
 .otherArticlesTwo {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 16px;
 }
 
@@ -110,15 +115,14 @@ body {
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40%;
 }
 
 .colorButtonsTwo {
     display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
+    justify-content: center;    
 }
 
 .colorButtonsTwo button {

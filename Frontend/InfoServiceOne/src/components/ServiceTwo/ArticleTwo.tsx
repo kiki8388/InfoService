@@ -82,7 +82,7 @@ const ArticleTwo: React.FC = () => {
   };
 
   const StyledButton = styled(Button)`
-    width: 15%;
+    width: 100%;
     background-color: ${backButtonBackgroundColor};
 
     &:hover {
@@ -92,11 +92,23 @@ const ArticleTwo: React.FC = () => {
 
   return (
     <div className='containerTwoArt' style={{backgroundColor: backgroundColor}}>
-    <header className='headerTwoArt'>
-        <div className="logoTwoArt">
-            <h1>InfoService</h1>
-        </div>
-    </header>
+      <header className='headerTwoArt'>
+          <div className="logoTwoArt">
+              <h1>InfoService</h1>
+          </div>
+          <footer className='footerTwoArt' style={{ backgroundColor: footerBackgroundColor }}>
+            <div className='backButtonContainerTwoArt'>
+              <StyledButton className="backButton" variant='contained' onClick={() => navigate(-1)}>Back</StyledButton>
+            </div>
+            <div className="colorButtonsTwoArt">
+              <button onClick={chooseColorSchemeOne}></button>
+              <button onClick={chooseColorSchemeTwo}></button>
+              <button onClick={chooseColorSchemeThree}></button>
+              <button onClick={chooseColorSchemeFour}></button>
+            </div>
+            <p>&copy; 2024 News Website. All rights reserved.</p>
+          </footer>
+      </header>
     
       <div className="articleContainerTwoArt">
         <h1>{articleData.title}</h1>
@@ -105,19 +117,6 @@ const ArticleTwo: React.FC = () => {
         <p>Author: {articleData.author}</p>
         <p>Views: {articleData.views}</p>
       </div>
-      <div className='backButtonContainerTwoArt'>
-          <StyledButton className="backButton" variant='contained' onClick={() => navigate(-1)}>Back</StyledButton>
-      </div>
-   
-    <footer className='footerTwoArt' style={{ backgroundColor: footerBackgroundColor }}>
-      <div className="colorButtonsTwoArt">
-        <button onClick={chooseColorSchemeOne}></button>
-        <button onClick={chooseColorSchemeTwo}></button>
-        <button onClick={chooseColorSchemeThree}></button>
-        <button onClick={chooseColorSchemeFour}></button>
-      </div>
-      <p>&copy; 2024 News Website. All rights reserved.</p>
-    </footer>
     </div>
   );
 };

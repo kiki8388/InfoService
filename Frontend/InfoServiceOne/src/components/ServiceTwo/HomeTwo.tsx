@@ -157,7 +157,7 @@ const HomeTwo: React.FC = () => {
   };
 
   const FilterButton = styled.button<{}>`
-    padding: 10px 20px;
+    padding: 15px 20px;
     border: none;
     cursor: pointer;
     border-radius: 4px;
@@ -193,9 +193,9 @@ const HomeTwo: React.FC = () => {
             <button onClick={chooseColorSchemeTwo}></button>
             <button onClick={chooseColorSchemeThree}></button>
             <button onClick={chooseColorSchemeFour}></button>
-          </div>        
+          </div> 
+          <p>&copy; 2024 News Website. All rights reserved.</p>       
         </footer>
-        <p>&copy; 2024 News Website. All rights reserved.</p>
       </header>
       <main className='mainTwo'>
         <section className="otherArticlesTwo">
@@ -205,9 +205,10 @@ const HomeTwo: React.FC = () => {
           ) : (
             filteredPosts.map(post => (
               <article className='articleTwo' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
-                <img src="https://via.placeholder.com/400x200" alt="Article Image" />
+                <img src="https://via.placeholder.com/800x100" alt="Article Image" />
                 <h3>{post.title}</h3>
                 <p>{truncateContent(post.content, 20)}</p>
+                <p>Views: {post.views}</p>
               </article>
             ))
           )}
