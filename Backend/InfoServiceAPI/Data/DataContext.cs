@@ -10,6 +10,6 @@ namespace InfoServiceAPI.Data
         public DataContext(DbContextOptions<DataContext> opt) : base(opt) { }
 
         public DbSet<Post> Posts { get; set; }
-
+        public DbSet<Comment> Comments { get; set; }
     }
 }

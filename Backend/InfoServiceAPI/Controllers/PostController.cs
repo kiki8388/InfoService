@@ -1,6 +1,6 @@
-﻿using InfoServiceAPI.Interfaces;
-using InfoServiceAPI.Models.Commands;
+﻿using InfoServiceAPI.Models.Commands;
 using InfoServiceAPI.Models.DTOs;
+using InfoServiceAPI.Services.Posts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +10,9 @@ namespace InfoServiceAPI.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        private readonly IPosts _posts;
+        private readonly IPostServices _posts;
 
-        public PostController(IPosts posts)
+        public PostController(IPostServices posts)
         {
             _posts = posts;
         }

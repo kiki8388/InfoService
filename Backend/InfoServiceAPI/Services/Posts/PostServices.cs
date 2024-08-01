@@ -1,18 +1,17 @@
 ﻿using InfoServiceAPI.Data;
 using InfoServiceAPI.Exceptions;
-using InfoServiceAPI.Interfaces;
 using InfoServiceAPI.Models;
 using InfoServiceAPI.Models.Commands;
 using InfoServiceAPI.Models.DTOs;
 using Microsoft.EntityFrameworkCore;
 
-namespace InfoServiceAPI.Logic
+namespace InfoServiceAPI.Services.Posts
 {
-    public class Posts : IPosts
+    public class PostServices : IPostServices
     {
         private readonly DataContext _db;
 
-        public Posts(DataContext db)
+        public PostServices(DataContext db)
         {
             _db = db;
         }
@@ -26,9 +25,8 @@ namespace InfoServiceAPI.Logic
 
         public async Task Delete(Guid postId)
         {
-            var post = await _db.Posts.FirstOrDefaultAsync(p => p.Id == postId);
-            if (post is null)
-                throw new NotFoundException("Post doesn't exist");
+            var post = await Get(postId);
+            _db.Comments.RemoveRange(post.Comments);
             _db.Posts.Remove(post);
             await _db.SaveChangesAsync();
         }
@@ -54,7 +52,14 @@ namespace InfoServiceAPI.Logic
 
         public async Task<Post> Get(Guid postId)
         {
+            if (postId == Guid.Empty)
+                throw new NotFoundException("Post ID cannot be empty");
+
             var post = await _db.Posts.FirstOrDefaultAsync(p => p.Id == postId);
+
+            if (post is null)
+                throw new NotFoundException("Post doesn't exist");
+
             return post;
         }
 

@@ -1,6 +1,5 @@
 using InfoServiceAPI.Data;
-using InfoServiceAPI.Interfaces;
-using InfoServiceAPI.Logic;
+using InfoServiceAPI.Services.Posts;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,7 +23,7 @@ builder.Services.AddCors(p => p.AddPolicy("MyPolicy", build =>
 }));
 
 builder.Services
-    .AddScoped<IPosts, Posts>();
+    .AddScoped<IPostServices, PostServices>();
 
 var app = builder.Build();
 
