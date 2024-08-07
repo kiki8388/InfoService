@@ -55,7 +55,9 @@ namespace InfoServiceAPI.Services.Posts
             if (postId == Guid.Empty)
                 throw new NotFoundException("Post ID cannot be empty");
 
-            var post = await _db.Posts.FirstOrDefaultAsync(p => p.Id == postId);
+            var post = await _db.Posts
+                .Include(p => p.Comments)
+                .FirstOrDefaultAsync(p => p.Id == postId);
 
             if (post is null)
                 throw new NotFoundException("Post doesn't exist");

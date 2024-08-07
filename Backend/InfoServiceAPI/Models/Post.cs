@@ -7,7 +7,7 @@
         public string Category { get; set; }
         public string Author{ get; set; }
         public int Views { get; set; }
-        public IEnumerable<Comment> Comments { get; set; }
+        public List<Comment> Comments { get; set; }
 
         public Post(string title, string content, string category, string author)
         {
@@ -17,6 +17,11 @@
             Author = author;
             Views = 0;
             Comments = new List<Comment>();
+        }
+
+        public void AddComment(Comment comment)
+        {
+            Comments.Add(comment);
         }
     }
 }

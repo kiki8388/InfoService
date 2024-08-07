@@ -174,19 +174,21 @@ const HomeTwo: React.FC = () => {
   return (
     <div className='containerTwo' style={{ backgroundColor: backgroundColor }}>
       <header className="headerTwo" style={{ color: headerColor, backgroundColor: headerBackgroundColor }}>
-        <div className="logoTwo">
-          <h1>InfoService</h1>
+        <div className='innerHeaderTwo'>
+          <div className="logoTwo">
+            <h1>InfoService</h1>
+          </div>
+          <nav className="filterButtonsTwo">
+            <FilterButton onClick={() => filterPostsByCategory('All')}>All</FilterButton>
+            <FilterButton onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
+            <FilterButton onClick={() => filterPostsByCategory('World')}>World</FilterButton>
+            <FilterButton onClick={() => filterPostsByCategory('Politics')}>Politics</FilterButton>
+            <FilterButton onClick={() => filterPostsByCategory('Business')}>Business</FilterButton>
+            <FilterButton onClick={() => filterPostsByCategory('Technology')}>Technology</FilterButton>
+            <FilterButton onClick={() => filterPostsByCategory('Arts')}>Arts</FilterButton>
+            <FilterButton onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
+          </nav>
         </div>
-        <nav className="filterButtonsTwo">
-          <FilterButton onClick={() => filterPostsByCategory('All')}>All</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('World')}>World</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Politics')}>Politics</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Business')}>Business</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Technology')}>Technology</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Arts')}>Arts</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
-        </nav>
         <footer className="footerTwo" style={{ backgroundColor: footerBackgroundColor }}>
           <div className="colorButtonsTwo">
             <button onClick={chooseColorSchemeOne}></button>

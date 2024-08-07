@@ -21,6 +21,8 @@ namespace InfoServiceAPI.Services.Comments
         public async Task Create(CreateComment command)
         {
             var comment = new Comment(command.Author, command.Content);
+            var post = await _postServices.Get(command.PostId);
+            post.Comments.Add(comment);
             await _db.AddAsync(comment);
             await _db.SaveChangesAsync();
         }
@@ -52,6 +54,11 @@ namespace InfoServiceAPI.Services.Comments
             var post = await _postServices.Get(postId);
 
             var comments = post.Comments;
+
+            foreach (var comment in comments)
+            {
+               comment.CreatedAt.ToString("yyyy-MM-dd HH:mm");
+            }
 
             return comments;
         }

@@ -11,15 +11,6 @@ html, body {
     box-sizing: border-box;
 }
 
-.articleContainerTwoArt {
-    padding: 20px;
-    text-align: justify;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 20%;
-}
-
 .headerTwoArt {
     background-color: #333;
     color: white;
@@ -27,7 +18,10 @@ html, body {
     text-align: center;
     width: 20%;
     position: fixed;
-    height: 118vh;
+    height: 100vh; /* Make sure the header spans the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes footer to the bottom */
 }
 
 .headerTwoArt .logoTwoArt {
@@ -36,6 +30,36 @@ html, body {
 
 .headerTwoArt .logoTwoArt h1 {
     margin: 0;
+}
+
+.articleContainerTwoArt {
+    padding: 20px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20%;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.addCommentContainerTwoArt {
+    width: 80%;
+}
+
+.addCommentContainerTwoArt form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.addCommentContainerTwoArt form .MuiTextField-root {
+    width: 100%;
+}
+
+.commentsContainerTwoArt {
+    width: 80%;
 }
 
 .backButtonContainerTwoArt {
@@ -51,16 +75,11 @@ html, body {
     text-align: center;
     width: 100%;
     background-color: #333;
-    position: relative;
-    margin-top: 180%;
-    display: flex;
-    flex-direction: column;
+    padding: 10px 0;
 }
 
 .colorButtonsTwoArt {
     display: flex;
-    right: 20px;
-    bottom: 20px;
     justify-content: center;
     margin-top: 5%;
 }
