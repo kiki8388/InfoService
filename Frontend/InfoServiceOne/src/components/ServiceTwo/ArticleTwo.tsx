@@ -193,9 +193,11 @@ const ArticleTwo: React.FC = () => {
       <div className="articleContainerTwoArt">
         <h1>{articleData.title}</h1>
         <p>{articleData.content}</p>
-        <p>Category: {articleData.category}</p>
-        <p>Author: {articleData.author}</p>
-        <p>Views: {articleData.views}</p>
+        <div className='articleInfoTwoArt'>
+          <p>Category: {articleData.category}</p>
+          <p>Author: {articleData.author}</p>
+          <p>Views: {articleData.views}</p>
+        </div>
         <div className='addCommentContainerTwoArt'>
           <form onSubmit={handleCreateComment}>
             <TextField
