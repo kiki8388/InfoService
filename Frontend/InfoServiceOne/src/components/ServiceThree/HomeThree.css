@@ -8,80 +8,45 @@ body {
     padding: 0;
 }
 
-.headerOne {
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-.headerOne .logoOne {
-    height: 20%;
-}
-
-.headerOne .logoOne h1 {
-    margin: 0;
-}
-
-.filterButtonsOne {
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-}
-
-.headerNavOne {
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0.3s, opacity 0.3s;
-    width: 100%;
-}
-
-.mainOne {
+.mainThree {
     padding: 20px;
     padding-top: 20px; /* Adjust padding to avoid content being hidden behind fixed nav */
     flex: 1;
     min-height: 67vh;
 }
 
-.mainArticleOne {
+.mainArticleThree {
     margin-bottom: 20px;
 }
 
-.mainArticleOne img {
+.mainArticleThree img {
     width: 100%;
     height: auto;
 }
 
-.mainArticleOne h2 {
+.mainArticleThree h2 {
     font-size: 2em;
     margin: 10px 0;
 }
 
-.filterButtonsOne {
-    display: flex;
-    justify-content: center;
-}
-
-.otherArticlesOne {
+.otherArticlesThree {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
 
-.otherArticlesOne .articleOne {
+.otherArticlesThree .articleThree {
     padding: 16px;
     border-radius: 8px;
     text-align: center;
 }
 
-.otherArticlesOne img {
+.otherArticlesThree img {
     width: 100%;
     height: auto;
 }
 
-.noArticlesOne {
+.noArticlesThree {
     grid-column: 1 / -1; /* Span all columns */
     display: flex;
     justify-content: center;
@@ -96,23 +61,31 @@ body {
     margin-bottom: 20px;
 }
 
-.footerOne {
+.logoThree {
+    height: 5%;
+    justify-content: flex-start;
+    margin-left: 2%;
+}
+
+.footerThree {
     color: white;
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.colorButtonsOne {
+.colorButtonsThree {
     display: flex;
     justify-content: flex-end; /* Align buttons to the right */
-    position: absolute;
     right: 20px;
     bottom: 20px;
+    margin-right: 2%;
 }
 
-.colorButtonsOne button {
+.colorButtonsThree button {
     width: 40px; /* Set width and height to create square buttons */
     height: 40px;
     border: none;
@@ -124,6 +97,6 @@ body {
     color: white;
 }
 
-.colorButtonsOne button:hover {
+.colorButtonsThree button:hover {
     background-color: #272727;
 }
