@@ -183,16 +183,97 @@ const HomeThree: React.FC = () => {
     <div className='containerThree' style={{ backgroundColor: backgroundColor }}>
       <main className='mainThree'>
         <section className="otherArticlesThree">
-          {errorMessage && <div className="errorMessage">{errorMessage}</div>}
-          {sportsPosts.length === 0 ? (
-            <div className="noArticlesThree">No articles</div>
-          ) : (
-            sportsPosts.map(post => (
-              <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
-                <h3>{post.title}</h3>
-              </article>
-            ))
-          )}
+          <div className='articleCategoryContainerThree'>
+            <h1>Sports</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            {sportsPosts.length === 0 ? (
+              <div className="noArticlesThree">No articles</div>
+            ) : (
+              sportsPosts.map(post => (
+                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+          </div>
+          <div className='articleCategoryContainerThree'>
+            <h1>World</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            {worldPosts.length === 0 ? (
+              <div className="noArticlesThree">No articles</div>
+            ) : (
+              worldPosts.map(post => (
+                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+          </div>
+          <div className='articleCategoryContainerThree'>
+            <h1>Politics</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            {worldPosts.length === 0 ? (
+              <div className="noArticlesThree">No articles</div>
+            ) : (
+              worldPosts.map(post => (
+                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+          </div>
+          <div className='articleCategoryContainerThree'>
+            <h1>Business</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            {businessPosts.length === 0 ? (
+              <div className="noArticlesThree">No articles</div>
+            ) : (
+              businessPosts.map(post => (
+                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+          </div>
+          <div className='articleCategoryContainerThree'>
+            <h1>Technology</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            {technologyPosts.length === 0 ? (
+              <div className="noArticlesThree">No articles</div>
+            ) : (
+              technologyPosts.map(post => (
+                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+          </div>
+          <div className='articleCategoryContainerThree'>
+            <h1>Arts</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            {artsPosts.length === 0 ? (
+              <div className="noArticlesThree">No articles</div>
+            ) : (
+              artsPosts.map(post => (
+                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+          </div>
+          <div className='articleCategoryContainerThree'>
+            <h1>Opinion</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            {opinionPosts.length === 0 ? (
+              <div className="noArticlesThree">No articles</div>
+            ) : (
+              opinionPosts.map(post => (
+                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+          </div>
         </section>
       </main>
       <footer className="footerThree" style={{ backgroundColor: footerBackgroundColor }}>
