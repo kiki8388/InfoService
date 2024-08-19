@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import styled from 'styled-components';
 import "./HomeThree.css";
 
 interface PostData {
@@ -27,18 +26,6 @@ const HomeThree: React.FC = () => {
   const [artsPosts, setArtsPosts] = useState<Array<PostData>>([]);
   const [opinionPosts, setOpinionPosts] = useState<Array<PostData>>([]);
 
-  // State for managing colors
-  const [backgroundColor, setBackgroundColor] = useState('white');
-  const [headerColor, setHeaderColor] = useState('white');
-  const [headerBackgroundColor, setHeaderBackgroundColor] = useState('#333333');
-  const [navButtonColor, setNavButtonColor] = useState('white');
-  const [navButtonBackgroundColor, setNavButtonBackgroundColor] = useState('#333333');
-  const [navButtonHoverColor, setNavButtonHoverColor] = useState('#272727');
-  const [articleColor, setArticleColor] = useState('black');
-  const [articleBackgroundColor, setArticleBackgroundColor] = useState('#f4f4f4');
-  const [footerColor, setFooterColor] = useState('white');
-  const [footerBackgroundColor, setFooterBackgroundColor] = useState('#333333');
-
   const handlePosts = async () => {
     setPostsData([]);
     try {
@@ -57,8 +44,12 @@ const HomeThree: React.FC = () => {
 
   useEffect(() => {
     handlePosts();
-    filterPostsByCategory();
   }, []);
+  
+  useEffect(() => {
+    filterPostsByCategory();
+  }, [postsData]);
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,74 +104,46 @@ const HomeThree: React.FC = () => {
   };
 
   const chooseColorSchemeOne = () => {
-    setBackgroundColor('white');
-    setHeaderColor('white');
-    setHeaderBackgroundColor('#333333');
-    setNavButtonColor('white');
-    setNavButtonBackgroundColor('#333333');
-    setNavButtonHoverColor('#272727');
-    setArticleColor('black');
-    setArticleBackgroundColor('#f4f4f4');
-    setFooterColor('white');
-    setFooterBackgroundColor('#333333');
+    document.documentElement.style.setProperty('--bgColor', 'white');
+    document.documentElement.style.setProperty('--articleColor', 'black');
+    document.documentElement.style.setProperty('--articleBgColor', '#f4f4f4');
+    document.documentElement.style.setProperty('--articleBgHoverColor', '#b9b9b9');
+    document.documentElement.style.setProperty('--footerColor', 'white');
+    document.documentElement.style.setProperty('--footerBgColor', '#333333');  
   };
 
   const chooseColorSchemeTwo = () => {
-    setBackgroundColor('white');
-    setHeaderColor('white');
-    setHeaderBackgroundColor('#333333');
-    setNavButtonColor('white');
-    setNavButtonBackgroundColor('#333333');
-    setNavButtonHoverColor('#272727');
-    setArticleColor('black');
-    setArticleBackgroundColor('#f4f4f4');
-    setFooterColor('white');
-    setFooterBackgroundColor('#333333');
+    document.documentElement.style.setProperty('--bgColor', 'black');
+    document.documentElement.style.setProperty('--articleColor', 'white');
+    document.documentElement.style.setProperty('--articleBgColor', '#b9b9b9');
+    document.documentElement.style.setProperty('--articleBgHoverColor', '#f4f4f4');
+    document.documentElement.style.setProperty('--footerColor', 'black');
+    document.documentElement.style.setProperty('--footerBgColor', '#333333'); 
+    console.log("Color Scheme Two");
+    console.log(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));
+    console.log(getComputedStyle(document.documentElement).getPropertyValue('--footerColor'));  
   };
 
   const chooseColorSchemeThree = () => {
-    setBackgroundColor('white');
-    setHeaderColor('white');
-    setHeaderBackgroundColor('#333333');
-    setNavButtonColor('white');
-    setNavButtonBackgroundColor('#333333');
-    setNavButtonHoverColor('#272727');
-    setArticleColor('black');
-    setArticleBackgroundColor('#f4f4f4');
-    setFooterColor('white');
-    setFooterBackgroundColor('#333333');
+    document.documentElement.style.setProperty('--bgColor', 'black');
+    document.documentElement.style.setProperty('--articleColor', 'white');
+    document.documentElement.style.setProperty('--articleBgColor', '#b9b9b9');
+    document.documentElement.style.setProperty('--articleBgHoverColor', '#f4f4f4');
+    document.documentElement.style.setProperty('--footerColor', 'black');
+    document.documentElement.style.setProperty('--footerBgColor', '#333333'); 
   };
 
   const chooseColorSchemeFour = () => {
-    setBackgroundColor('white');
-    setHeaderColor('white');
-    setHeaderBackgroundColor('#333333');
-    setNavButtonColor('white');
-    setNavButtonBackgroundColor('#333333');
-    setNavButtonHoverColor('#272727');
-    setArticleColor('black');
-    setArticleBackgroundColor('#f4f4f4');
-    setFooterColor('white');
-    setFooterBackgroundColor('#333333');
+    document.documentElement.style.setProperty('--bgColor', 'black');
+    document.documentElement.style.setProperty('--articleColor', 'white');
+    document.documentElement.style.setProperty('--articleBgColor', '#b9b9b9');
+    document.documentElement.style.setProperty('--articleBgHoverColor', '#f4f4f4');
+    document.documentElement.style.setProperty('--footerColor', 'black');
+    document.documentElement.style.setProperty('--footerBgColor', '#333333'); 
   };
 
-  const FilterButton = styled.button<{}>`
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    color: white;
-    background-color: ${navButtonBackgroundColor};
-
-    &:hover {
-      background-color: ${navButtonHoverColor};
-    }
-  `;
-
   return (
-    <div className='containerThree' style={{ backgroundColor: backgroundColor }}>
+    <div className='containerThree'>
       <main className='mainThree'>
         <section className="otherArticlesThree">
           <div className='articleCategoryContainerThree'>
@@ -190,7 +153,7 @@ const HomeThree: React.FC = () => {
               <div className="noArticlesThree">No articles</div>
             ) : (
               sportsPosts.map(post => (
-                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                <article className='articleThree' key={post.id} onClick={() => handleArticleClick(post)}>
                   <h3>{post.title}</h3>
                 </article>
               ))
@@ -203,7 +166,7 @@ const HomeThree: React.FC = () => {
               <div className="noArticlesThree">No articles</div>
             ) : (
               worldPosts.map(post => (
-                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                <article className='articleThree' key={post.id} onClick={() => handleArticleClick(post)}>
                   <h3>{post.title}</h3>
                 </article>
               ))
@@ -212,11 +175,11 @@ const HomeThree: React.FC = () => {
           <div className='articleCategoryContainerThree'>
             <h1>Politics</h1>
             {errorMessage && <div className="errorMessage">{errorMessage}</div>}
-            {worldPosts.length === 0 ? (
+            {politicsPosts.length === 0 ? (
               <div className="noArticlesThree">No articles</div>
             ) : (
               worldPosts.map(post => (
-                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                <article className='articleThree' key={post.id} onClick={() => handleArticleClick(post)}>
                   <h3>{post.title}</h3>
                 </article>
               ))
@@ -229,7 +192,7 @@ const HomeThree: React.FC = () => {
               <div className="noArticlesThree">No articles</div>
             ) : (
               businessPosts.map(post => (
-                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                <article className='articleThree' key={post.id} onClick={() => handleArticleClick(post)}>
                   <h3>{post.title}</h3>
                 </article>
               ))
@@ -242,7 +205,7 @@ const HomeThree: React.FC = () => {
               <div className="noArticlesThree">No articles</div>
             ) : (
               technologyPosts.map(post => (
-                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                <article className='articleThree' key={post.id} onClick={() => handleArticleClick(post)}>
                   <h3>{post.title}</h3>
                 </article>
               ))
@@ -255,7 +218,7 @@ const HomeThree: React.FC = () => {
               <div className="noArticlesThree">No articles</div>
             ) : (
               artsPosts.map(post => (
-                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                <article className='articleThree' key={post.id} onClick={() => handleArticleClick(post)}>
                   <h3>{post.title}</h3>
                 </article>
               ))
@@ -268,7 +231,7 @@ const HomeThree: React.FC = () => {
               <div className="noArticlesThree">No articles</div>
             ) : (
               opinionPosts.map(post => (
-                <article className='articleThree' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+                <article className='articleThree' key={post.id} onClick={() => handleArticleClick(post)}>
                   <h3>{post.title}</h3>
                 </article>
               ))
@@ -276,7 +239,7 @@ const HomeThree: React.FC = () => {
           </div>
         </section>
       </main>
-      <footer className="footerThree" style={{ backgroundColor: footerBackgroundColor }}>
+      <footer className="footerThree">
         <div className="logoThree">
           <h2>InfoService</h2>
         </div>

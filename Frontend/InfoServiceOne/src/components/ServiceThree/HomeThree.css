@@ -1,5 +1,13 @@
-#root {
+:root {
     background-color: #fff;
+    --bgColor: white;
+    --headerColor: white;
+    --headerBgColor: #333333;
+    --articleColor: black;
+    --articleBgColor: #f4f4f4;
+    --articleBgHoverColor: #b9b9b9;
+    --footerColor: white;
+    --footerBgColor: #333333;
 }
 
 body {
@@ -8,25 +16,18 @@ body {
     padding: 0;
 }
 
+.containerThree {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--bgColor);
+}
+
 .mainThree {
     padding: 20px;
     padding-top: 20px; /* Adjust padding to avoid content being hidden behind fixed nav */
     flex: 1;
-    min-height: 67vh;
-}
-
-.mainArticleThree {
-    margin-bottom: 20px;
-}
-
-.mainArticleThree img {
-    width: 100%;
-    height: auto;
-}
-
-.mainArticleThree h2 {
-    font-size: 2em;
-    margin: 10px 0;
 }
 
 .otherArticlesThree {
@@ -35,15 +36,24 @@ body {
     gap: 16px;
 }
 
-.otherArticlesThree .articleThree {
-    padding: 16px;
-    border-radius: 8px;
-    text-align: center;
+.articleCategoryContainerThree {
+    
 }
 
-.otherArticlesThree img {
-    width: 100%;
-    height: auto;
+.articleThree {
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--articleColor);
+    background-color: var(--articleBgColor);
+}
+
+.articleThree:hover {
+    background-color: var(--articleBgHoverColor);
+}
+
+.articleThree h3 {
+    margin: 0;
 }
 
 .noArticlesThree {
@@ -51,8 +61,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 50%;
     font-size: 24px;
+    margin-bottom: 10%;
 }
 
 .errorMessage {
@@ -75,7 +86,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    color: var(--footerColor);
+    background-color: var(--footerBgColor);
 }
 
 .colorButtonsThree {
