@@ -113,3 +113,53 @@ body {
 .colorButtonsThree button:hover {
     background-color: #272727;
 }
+
+/* Nowa warstwa dla rozmycia tła */
+.background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Półprzezroczyste tło */
+    backdrop-filter: blur(5px); /* Efekt rozmycia */
+    z-index: 999; /* Warstwa poniżej pop-upu, ale powyżej treści strony */
+    pointer-events: none; /* Wyłączenie interakcji */
+}
+
+/* Stylizacja dla pop-upu */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Pop-up na górze */
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh; /* Ogranicz maksymalną wysokość pop-upu do 80% wysokości widoku */
+    overflow-y: auto; /* Dodaj pionowe przewijanie */
+    position: relative;
+    z-index: 1001; /* Pop-up nad warstwą rozmycia */
+}
+
+
+.close-popup {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+

@@ -26,6 +26,9 @@ const HomeThree: React.FC = () => {
   const [artsPosts, setArtsPosts] = useState<Array<PostData>>([]);
   const [opinionPosts, setOpinionPosts] = useState<Array<PostData>>([]);
 
+  const [selectedPost, setSelectedPost] = useState<PostData | null>(null);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
   const handlePosts = async () => {
     setPostsData([]);
     try {
@@ -81,9 +84,10 @@ const HomeThree: React.FC = () => {
       // Increment the view count
       const updatedPost = { ...post, views: post.views + 1 };
       await axios.put(`${apiURL}/Post/UpdateViews/${post.id}`);
-
-      // Navigate to the article page
-      navigate(`article`, { state: updatedPost });
+      
+      // Set the selected post and show the popup
+      setSelectedPost(updatedPost);
+      setIsPopupVisible(true);
     } catch (error: any) {
       if (error.response) {
         console.log(error.response);
@@ -95,12 +99,9 @@ const HomeThree: React.FC = () => {
     }
   };
 
-  const truncateContent = (content: string, wordLimit: number) => {
-    const words = content.split(' ');
-    if (words.length <= wordLimit) {
-      return content;
-    }
-    return words.slice(0, wordLimit).join(' ') + '...';
+  const closePopup = () => {
+    setIsPopupVisible(false);
+    setSelectedPost(null);
   };
 
   const chooseColorSchemeOne = () => {
@@ -119,9 +120,6 @@ const HomeThree: React.FC = () => {
     document.documentElement.style.setProperty('--articleBgHoverColor', '#f4f4f4');
     document.documentElement.style.setProperty('--footerColor', 'black');
     document.documentElement.style.setProperty('--footerBgColor', '#333333'); 
-    console.log("Color Scheme Two");
-    console.log(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));
-    console.log(getComputedStyle(document.documentElement).getPropertyValue('--footerColor'));  
   };
 
   const chooseColorSchemeThree = () => {
@@ -143,7 +141,8 @@ const HomeThree: React.FC = () => {
   };
 
   return (
-    <div className='containerThree'>
+    <div className={`containerThree ${isPopupVisible ? 'blur-background' : ''}`}>
+      {isPopupVisible && <div className="background-blur"></div>}
       <main className='mainThree'>
         <section className="otherArticlesThree">
           <div className='articleCategoryContainerThree'>
@@ -251,6 +250,20 @@ const HomeThree: React.FC = () => {
           <button onClick={chooseColorSchemeFour}></button>
         </div>
       </footer>
+      {isPopupVisible && selectedPost && (
+      <div className="popup-overlay" onClick={closePopup}>
+        <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+          <h1>{selectedPost.title}</h1>
+          <p>{selectedPost.content}</p>
+          <p>Category: {selectedPost.category}</p>
+          <p>Author: {selectedPost.author}</p>
+          <p>Views: {selectedPost.views}</p>
+          <button className="close-popup" onClick={closePopup}>
+            Close
+          </button>
+        </div>
+      </div>
+      )}
     </div>
   );
 }
