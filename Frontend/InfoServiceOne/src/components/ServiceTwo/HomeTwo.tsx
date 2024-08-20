@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import styled from 'styled-components';
 import "./HomeTwo.css";
 
 interface PostData {
@@ -20,18 +19,6 @@ const HomeTwo: React.FC = () => {
   const [visible, setVisible] = useState(false);
   const [postsData, setPostsData] = useState<Array<PostData>>([]);
   const [filteredPosts, setFilteredPosts] = useState<Array<PostData>>([]);
-
-  // State for managing colors
-  const [backgroundColor, setBackgroundColor] = useState('white');
-  const [headerColor, setHeaderColor] = useState('white');
-  const [headerBackgroundColor, setHeaderBackgroundColor] = useState('#333333');
-  const [navButtonColor, setNavButtonColor] = useState('white');
-  const [navButtonBackgroundColor, setNavButtonBackgroundColor] = useState('#333333');
-  const [navButtonHoverColor, setNavButtonHoverColor] = useState('#272727');
-  const [articleColor, setArticleColor] = useState('black');
-  const [articleBackgroundColor, setArticleBackgroundColor] = useState('#f4f4f4');
-  const [footerColor, setFooterColor] = useState('white');
-  const [footerBackgroundColor, setFooterBackgroundColor] = useState('#333333');
 
   const handlePosts = async () => {
     setPostsData([]);
@@ -105,91 +92,76 @@ const HomeTwo: React.FC = () => {
   };
 
   const chooseColorSchemeOne = () => {
-    setBackgroundColor('white');
-    setHeaderColor('white');
-    setHeaderBackgroundColor('#333333');
-    setNavButtonColor('white');
-    setNavButtonBackgroundColor('#333333');
-    setNavButtonHoverColor('#272727');
-    setArticleColor('black');
-    setArticleBackgroundColor('#f4f4f4');
-    setFooterColor('white');
-    setFooterBackgroundColor('#333333');
+    document.documentElement.style.setProperty('--bgColor', 'white');
+    document.documentElement.style.setProperty('--headerColor', 'white');
+    document.documentElement.style.setProperty('--headerBgColor', '#333');
+    document.documentElement.style.setProperty('--navButtonColor', 'white');
+    document.documentElement.style.setProperty('--navButtonBgColor', '#333');
+    document.documentElement.style.setProperty('--navButtonBgHoverColor', '#272727');
+    document.documentElement.style.setProperty('--articleColor', 'black');
+    document.documentElement.style.setProperty('--articleBgColor', '#f4f4f4');
+    document.documentElement.style.setProperty('--footerColor', 'white');
+    document.documentElement.style.setProperty('--footerBgColor', '#333');
   };
 
   const chooseColorSchemeTwo = () => {
-    setBackgroundColor('white');
-    setHeaderColor('white');
-    setHeaderBackgroundColor('#333333');
-    setNavButtonColor('white');
-    setNavButtonBackgroundColor('#333333');
-    setNavButtonHoverColor('#272727');
-    setArticleColor('black');
-    setArticleBackgroundColor('#f4f4f4');
-    setFooterColor('white');
-    setFooterBackgroundColor('#333333');
+    document.documentElement.style.setProperty('--bgColor', 'black');
+    document.documentElement.style.setProperty('--headerColor', 'black');
+    document.documentElement.style.setProperty('--headerBgColor', '#272727');
+    document.documentElement.style.setProperty('--navButtonColor', 'black');
+    document.documentElement.style.setProperty('--navButtonBgColor', '#272727');
+    document.documentElement.style.setProperty('--navButtonBgHoverColor', '#333');
+    document.documentElement.style.setProperty('--articleColor', 'white');
+    document.documentElement.style.setProperty('--articleBgColor', '#f4f4f4');
+    document.documentElement.style.setProperty('--footerColor', 'black');
+    document.documentElement.style.setProperty('--footerBgColor', '#272727');
   };
 
   const chooseColorSchemeThree = () => {
-    setBackgroundColor('white');
-    setHeaderColor('white');
-    setHeaderBackgroundColor('#333333');
-    setNavButtonColor('white');
-    setNavButtonBackgroundColor('#333333');
-    setNavButtonHoverColor('#272727');
-    setArticleColor('black');
-    setArticleBackgroundColor('#f4f4f4');
-    setFooterColor('white');
-    setFooterBackgroundColor('#333333');
+    document.documentElement.style.setProperty('--bgColor', 'white');
+    document.documentElement.style.setProperty('--headerColor', 'white');
+    document.documentElement.style.setProperty('--headerBgColor', '#333');
+    document.documentElement.style.setProperty('--navButtonColor', 'white');
+    document.documentElement.style.setProperty('--navButtonBgColor', '#333');
+    document.documentElement.style.setProperty('--navButtonBgHoverColor', '#272727');
+    document.documentElement.style.setProperty('--articleColor', 'black');
+    document.documentElement.style.setProperty('--articleBgColor', '#f4f4f4');
+    document.documentElement.style.setProperty('--footerColor', 'white');
+    document.documentElement.style.setProperty('--footerBgColor', '#333');
   };
 
   const chooseColorSchemeFour = () => {
-    setBackgroundColor('white');
-    setHeaderColor('white');
-    setHeaderBackgroundColor('#333333');
-    setNavButtonColor('white');
-    setNavButtonBackgroundColor('#333333');
-    setNavButtonHoverColor('#272727');
-    setArticleColor('black');
-    setArticleBackgroundColor('#f4f4f4');
-    setFooterColor('white');
-    setFooterBackgroundColor('#333333');
+    document.documentElement.style.setProperty('--bgColor', 'white');
+    document.documentElement.style.setProperty('--headerColor', 'white');
+    document.documentElement.style.setProperty('--headerBgColor', '#333');
+    document.documentElement.style.setProperty('--navButtonColor', 'white');
+    document.documentElement.style.setProperty('--navButtonBgColor', '#333');
+    document.documentElement.style.setProperty('--navButtonBgHoverColor', '#272727');
+    document.documentElement.style.setProperty('--articleColor', 'black');
+    document.documentElement.style.setProperty('--articleBgColor', '#f4f4f4');
+    document.documentElement.style.setProperty('--footerColor', 'white');
+    document.documentElement.style.setProperty('--footerBgColor', '#333');
   };
 
-  const FilterButton = styled.button<{}>`
-    padding: 15px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    color: white;
-    background-color: ${navButtonBackgroundColor};
-
-    &:hover {
-      background-color: ${navButtonHoverColor};
-    }
-  `;
-
   return (
-    <div className='containerTwo' style={{ backgroundColor: backgroundColor }}>
-      <header className="headerTwo" style={{ color: headerColor, backgroundColor: headerBackgroundColor }}>
+    <div className='containerTwo'>
+      <header className="headerTwo">
         <div className='innerHeaderTwo'>
           <div className="logoTwo">
             <h1>InfoService</h1>
           </div>
           <nav className="filterButtonsTwo">
-            <FilterButton onClick={() => filterPostsByCategory('All')}>All</FilterButton>
-            <FilterButton onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
-            <FilterButton onClick={() => filterPostsByCategory('World')}>World</FilterButton>
-            <FilterButton onClick={() => filterPostsByCategory('Politics')}>Politics</FilterButton>
-            <FilterButton onClick={() => filterPostsByCategory('Business')}>Business</FilterButton>
-            <FilterButton onClick={() => filterPostsByCategory('Technology')}>Technology</FilterButton>
-            <FilterButton onClick={() => filterPostsByCategory('Arts')}>Arts</FilterButton>
-            <FilterButton onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
+            <button onClick={() => filterPostsByCategory('All')}>All</button>
+            <button onClick={() => filterPostsByCategory('Sports')}>Sports</button>
+            <button onClick={() => filterPostsByCategory('World')}>World</button>
+            <button onClick={() => filterPostsByCategory('Politics')}>Politics</button>
+            <button onClick={() => filterPostsByCategory('Business')}>Business</button>
+            <button onClick={() => filterPostsByCategory('Technology')}>Technology</button>
+            <button onClick={() => filterPostsByCategory('Arts')}>Arts</button>
+            <button onClick={() => filterPostsByCategory('Opinion')}>Opinion</button>
           </nav>
         </div>
-        <footer className="footerTwo" style={{ backgroundColor: footerBackgroundColor }}>
+        <footer className="footerTwo">
           <div className="colorButtonsTwo">
             <button onClick={chooseColorSchemeOne}></button>
             <button onClick={chooseColorSchemeTwo}></button>
@@ -206,7 +178,7 @@ const HomeTwo: React.FC = () => {
             <div className="noArticlesTwo">No articles</div>
           ) : (
             filteredPosts.map(post => (
-              <article className='articleTwo' style={{color: articleColor, backgroundColor: articleBackgroundColor}} key={post.id} onClick={() => handleArticleClick(post)}>
+              <article className='articleTwo' key={post.id} onClick={() => handleArticleClick(post)}>
                 <img src="https://via.placeholder.com/800x100" alt="Article Image" />
                 <h3>{post.title}</h3>
                 <p>{truncateContent(post.content, 20)}</p>

@@ -9,11 +9,12 @@ html, body {
     flex-direction: row;
     min-height: 100vh;
     box-sizing: border-box;
+    background-color: var(--bgColor);
 }
 
 .headerTwoArt {
-    background-color: #333;
-    color: white;
+    background-color: var(--headerBgColor);
+    color: var(--headerColor);
     padding: 10px 0;
     text-align: center;
     width: 20%;
@@ -41,6 +42,8 @@ html, body {
     margin-left: 20%;
     flex: 1;
     box-sizing: border-box;
+    color: var(--articleContainerColor);
+    background-color: var(--articleContainerBgColor);
 }
 
 .articleContainerTwoArt p {
@@ -72,6 +75,18 @@ html, body {
 
 .commentsContainerTwoArt {
     width: 80%;
+    color: var(--commentsContainerColor);
+    background-color: var(--commentsContainerBgColor);
+}
+
+.MuiListItem-root {
+    color: var(--commentsContainerColor);
+    background-color: var(--commentsContainerBgColor);
+}
+
+.MuiList-root.MuiList-padding {
+    color: var(--commentsContainerColor);
+    background-color: var(--commentsContainerBgColor);
 }
 
 .backButtonContainerTwoArt {
@@ -82,8 +97,19 @@ html, body {
     width: 100%;
 }
 
+.MuiButtonBase-root.MuiButton-root {
+    width: 100%;
+    color: var(--backButtonColor);
+    background-color: var(--backButtonBgColor);
+}
+
+.MuiButtonBase-root.MuiButton-root:hover {
+    background-color: var(--backButtonBgHoverColor);
+}
+
 .footerTwoArt {
-    color: white;
+    color: var(--footerColor);
+    background-color: var(--footerBgColor);
     text-align: center;
     width: 100%;
     background-color: #333;

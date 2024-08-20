@@ -2,7 +2,6 @@ import React, { FormEvent, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import "./ArticleTwo.css";
-import { styled } from '@mui/system';
 import axios from 'axios';
 import { TextField, List, ListItem, Divider, ListItemText, ListItemAvatar, Avatar, Typography } from '@mui/material';
 
@@ -36,16 +35,6 @@ const ArticleTwo: React.FC = () => {
   const navigate = useNavigate();
   const apiURL = "https://localhost:7083/api";
 
-  const [backgroundColor, setBackgroundColor] = useState('white');
-  const [headerColor, setHeaderColor] = useState('white');
-  const [headerBackgroundColor, setHeaderBackgroundColor] = useState('#333333');
-  const [articleContainerColor, setArticleContainerColor] = useState('black');
-  const [articleContainerBackgroundColor, setArticleContainerBackgroundColor] = useState('white');
-  const [backButtonColor, setBackButtonColor] = useState('white');
-  const [backButtonBackgroundColor, setBackButtonBackgroundColor] = useState('#333333');
-  const [backButtonHoverColor, setBackButtonHoverColor] = useState('#272727');
-  const [footerColor, setFooterColor] = useState('white');
-  const [footerBackgroundColor, setFooterBackgroundColor] = useState('#333333');
   const [errorMessage, setErrorMessage] = useState('');
   const [createCommentData, setCreateCommentData] = useState<CreateCommentData>({
     postId: articleData.id,
@@ -55,55 +44,64 @@ const ArticleTwo: React.FC = () => {
   const [commentsData, setCommentsData] = useState<Array<CommentData>>([]);
 
   const chooseColorSchemeOne = () => {
-    setBackgroundColor('white');
-    setHeaderColor('white');
-    setHeaderBackgroundColor('#333333');
-    setArticleContainerColor('black');
-    setArticleContainerBackgroundColor('white');
-    setBackButtonColor('white');
-    setBackButtonBackgroundColor('#333333');
-    setBackButtonHoverColor('#272727');
-    setFooterColor('white');
-    setFooterBackgroundColor('#333333');
+    document.documentElement.style.setProperty('--bgColor', 'white');
+    document.documentElement.style.setProperty('--headerColor', 'white');
+    document.documentElement.style.setProperty('--headerBgColor', '#333333');
+    document.documentElement.style.setProperty('--articleContainerColor', 'black');
+    document.documentElement.style.setProperty('--articleContainerBgColor', 'white');
+    document.documentElement.style.setProperty('--backButtonColor', 'white');
+    document.documentElement.style.setProperty('--backButtonBgColor', '#333');
+    document.documentElement.style.setProperty('--backButtonBgHoverColor', '#272727');
+    document.documentElement.style.setProperty('--footerColor', 'white');
+    document.documentElement.style.setProperty('--footerBgColor', '#333');
+    document.documentElement.style.setProperty('--commentsContainerColor', 'black');
+    document.documentElement.style.setProperty('--commentsContainerBgColor', 'white');
+
   };
 
   const chooseColorSchemeTwo = () => {
-    setBackgroundColor('white');
-    setHeaderColor('white');
-    setHeaderBackgroundColor('#333333');
-    setArticleContainerColor('black');
-    setArticleContainerBackgroundColor('white');
-    setBackButtonColor('white');
-    setBackButtonBackgroundColor('#333333');
-    setBackButtonHoverColor('#272727');
-    setFooterColor('white');
-    setFooterBackgroundColor('#333333');
+    document.documentElement.style.setProperty('--bgColor', 'black');
+    document.documentElement.style.setProperty('--headerColor', 'black');
+    document.documentElement.style.setProperty('--headerBgColor', '#272727');
+    document.documentElement.style.setProperty('--articleContainerColor', 'white');
+    document.documentElement.style.setProperty('--articleContainerBgColor', 'black');
+    document.documentElement.style.setProperty('--backButtonColor', 'black');
+    document.documentElement.style.setProperty('--backButtonBgColor', '#272727');
+    document.documentElement.style.setProperty('--backButtonBgHoverColor', '#333');
+    document.documentElement.style.setProperty('--footerColor', 'black');
+    document.documentElement.style.setProperty('--footerBgColor', '#272727');
+    document.documentElement.style.setProperty('--commentsContainerColor', 'white');
+    document.documentElement.style.setProperty('--commentsContainerBgColor', 'black');
   };
 
   const chooseColorSchemeThree = () => {
-    setBackgroundColor('white');
-    setHeaderColor('white');
-    setHeaderBackgroundColor('#333333');
-    setArticleContainerColor('black');
-    setArticleContainerBackgroundColor('white');
-    setBackButtonColor('white');
-    setBackButtonBackgroundColor('#333333');
-    setBackButtonHoverColor('#272727');
-    setFooterColor('white');
-    setFooterBackgroundColor('#333333');
+    document.documentElement.style.setProperty('--bgColor', 'white');
+    document.documentElement.style.setProperty('--headerColor', 'white');
+    document.documentElement.style.setProperty('--headerBgColor', '#333333');
+    document.documentElement.style.setProperty('--articleContainerColor', 'black');
+    document.documentElement.style.setProperty('--articleContainerBgColor', 'white');
+    document.documentElement.style.setProperty('--backButtonColor', 'white');
+    document.documentElement.style.setProperty('--backButtonBgColor', '#333');
+    document.documentElement.style.setProperty('--backButtonBgHoverColor', '#272727');
+    document.documentElement.style.setProperty('--footerColor', 'white');
+    document.documentElement.style.setProperty('--footerBgColor', '#333');
+    document.documentElement.style.setProperty('--commentsContainerColor', 'black');
+    document.documentElement.style.setProperty('--commentsContainerBgColor', 'white');
   };
 
   const chooseColorSchemeFour = () => {
-    setBackgroundColor('white');
-    setHeaderColor('white');
-    setHeaderBackgroundColor('#333333');
-    setArticleContainerColor('black');
-    setArticleContainerBackgroundColor('white');
-    setBackButtonColor('white');
-    setBackButtonBackgroundColor('#333333');
-    setBackButtonHoverColor('#272727');
-    setFooterColor('white');
-    setFooterBackgroundColor('#333333');
+    document.documentElement.style.setProperty('--bgColor', 'white');
+    document.documentElement.style.setProperty('--headerColor', 'white');
+    document.documentElement.style.setProperty('--headerBgColor', '#333333');
+    document.documentElement.style.setProperty('--articleContainerColor', 'black');
+    document.documentElement.style.setProperty('--articleContainerBgColor', 'white');
+    document.documentElement.style.setProperty('--backButtonColor', 'white');
+    document.documentElement.style.setProperty('--backButtonBgColor', '#333');
+    document.documentElement.style.setProperty('--backButtonBgHoverColor', '#272727');
+    document.documentElement.style.setProperty('--footerColor', 'white');
+    document.documentElement.style.setProperty('--footerBgColor', '#333');
+    document.documentElement.style.setProperty('--commentsContainerColor', 'black');
+    document.documentElement.style.setProperty('--commentsContainerBgColor', 'white');
   };
 
   const handleCreateComment = async (e: FormEvent) => {
@@ -161,24 +159,15 @@ const ArticleTwo: React.FC = () => {
     handleComments();
   }, []);
 
-  const StyledButton = styled(Button)`
-    width: 100%;
-    background-color: ${backButtonBackgroundColor};
-
-    &:hover {
-      background-color: ${backButtonHoverColor};
-    }
-  `;
-
   return (
-    <div className='containerTwoArt' style={{backgroundColor: backgroundColor}}>
+    <div className='containerTwoArt'>
       <header className='headerTwoArt'>
           <div className="logoTwoArt">
               <h1>InfoService</h1>
           </div>
-          <footer className='footerTwoArt' style={{ backgroundColor: footerBackgroundColor }}>
+          <footer className='footerTwoArt'>
             <div className='backButtonContainerTwoArt'>
-              <StyledButton className="backButton" variant='contained' onClick={() => navigate(-1)}>Back</StyledButton>
+              <Button className="backButton" variant='contained' onClick={() => navigate(-1)}>Back</Button>
             </div>
             <div className="colorButtonsTwoArt">
               <button onClick={chooseColorSchemeOne}></button>
@@ -221,9 +210,9 @@ const ArticleTwo: React.FC = () => {
             {errorMessage && (
               <p className="error"> {errorMessage} </p>
             )}
-            <StyledButton variant='contained' type='submit'>
+            <Button variant='contained' type='submit'>
               Comment
-            </StyledButton>
+            </Button>
           </form>
         </div>
         <div className='commentsContainerTwoArt'>

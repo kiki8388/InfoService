@@ -156,21 +156,6 @@ const HomeOne: React.FC = () => {
     setFooterBackgroundColor('#333333');
   };
 
-  const FilterButton = styled.button<{}>`
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    color: white;
-    background-color: ${navButtonBackgroundColor};
-
-    &:hover {
-      background-color: ${navButtonHoverColor};
-    }
-  `;
-
   return (
     <div className='containerOne' style={{ backgroundColor: backgroundColor }}>
       <header className="headerOne" style={{ color: headerColor, backgroundColor: headerBackgroundColor }}>
@@ -178,26 +163,26 @@ const HomeOne: React.FC = () => {
           <h1>InfoService</h1>
         </div>
         <nav className="filterButtonsOne">
-          <FilterButton onClick={() => filterPostsByCategory('All')}>All</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('World')}>World</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Politics')}>Politics</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Business')}>Business</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Technology')}>Technology</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Arts')}>Arts</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
+          <button onClick={() => filterPostsByCategory('All')}>All</button>
+          <button onClick={() => filterPostsByCategory('Sports')}>Sports</button>
+          <button onClick={() => filterPostsByCategory('World')}>World</button>
+          <button onClick={() => filterPostsByCategory('Politics')}>Politics</button>
+          <button onClick={() => filterPostsByCategory('Business')}>Business</button>
+          <button onClick={() => filterPostsByCategory('Technology')}>Technology</button>
+          <button onClick={() => filterPostsByCategory('Arts')}>Arts</button>
+          <button onClick={() => filterPostsByCategory('Opinion')}>Opinion</button>
         </nav>
       </header>
       <div className='headerNavOne' style={{ visibility: visible ? 'visible' : 'hidden', opacity: visible ? 1 : 0, color: headerColor, backgroundColor: headerBackgroundColor }}>
         <nav className='filterButtonsOne'>
-          <FilterButton onClick={() => filterPostsByCategory('All')}>All</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Sports')}>Sports</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('World')}>World</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Politics')}>Politics</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Business')}>Business</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Technology')}>Technology</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Arts')}>Arts</FilterButton>
-          <FilterButton onClick={() => filterPostsByCategory('Opinion')}>Opinion</FilterButton>
+          <button onClick={() => filterPostsByCategory('All')}>All</button>
+          <button onClick={() => filterPostsByCategory('Sports')}>Sports</button>
+          <button onClick={() => filterPostsByCategory('World')}>World</button>
+          <button onClick={() => filterPostsByCategory('Politics')}>Politics</button>
+          <button onClick={() => filterPostsByCategory('Business')}>Business</button>
+          <button onClick={() => filterPostsByCategory('Technology')}>Technology</button>
+          <button onClick={() => filterPostsByCategory('Arts')}>Arts</button>
+          <button onClick={() => filterPostsByCategory('Opinion')}>Opinion</button>
         </nav>
       </div>
       <main className='mainOne'>

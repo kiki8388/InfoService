@@ -6,6 +6,32 @@
   flex-direction: column;
 }
 
+:root {
+  --bgColor: white;
+  --headerColor: white;
+  --headerBgColor: #333333;
+  --articleContainerColor: black;
+  --articleContainerBgColor: white;
+  --backButtonColor: white;
+  --backButtonBgColor: #333;
+  --backButtonBgHoverColor: #272727;
+  --footerColor: white;
+  --footerBgColor: #333;
+  --commentsContainerColor: black;
+  --commentsContainerBgColor: white;
+  --navButtonColor: white;
+  --navButtonBgColor: #333;
+  --navButtonBgHoverColor: #272727;
+  --articleColor: black;
+  --articleBgColor: #f4f4f4;
+  --articleBgHoverColor: #b9b9b9;
+  --popupColor: black;
+  --popupBgColor: white;
+  --popupCloseColor: white;
+  --popupCloseBgColor: #333;
+  --popupCloseBgHoverColor: #272727;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

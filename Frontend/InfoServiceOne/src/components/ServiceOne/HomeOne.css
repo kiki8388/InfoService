@@ -1,15 +1,16 @@
-#root {
-    background-color: #fff;
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+.containerOne {
+    background-color: var(--bgColor);
+}
+
 .headerOne {
-    color: white;
+    color: var(--headerColor);
+    background-color: var(--headerBgColor);
     padding: 10px 0;
     text-align: center;
 }
@@ -28,6 +29,21 @@ body {
     text-align: center;
 }
 
+.filterButtonsOne button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    color: var(--navButtonColor);
+    background-color: var(--navButtonBgColor);
+}
+
+.filterButtonsOne button:hover {
+    background-color: var(--navButtonBgHoverColor);
+}
+
 .headerNavOne {
     position: fixed;
     top: 0;
@@ -36,6 +52,8 @@ body {
     opacity: 0;
     transition: visibility 0.3s, opacity 0.3s;
     width: 100%;
+    color: var(--headerColor);
+    background-color: var(--headerBgColor);
 }
 
 .mainOne {
@@ -43,20 +61,6 @@ body {
     padding-top: 20px; /* Adjust padding to avoid content being hidden behind fixed nav */
     flex: 1;
     min-height: 67vh;
-}
-
-.mainArticleOne {
-    margin-bottom: 20px;
-}
-
-.mainArticleOne img {
-    width: 100%;
-    height: auto;
-}
-
-.mainArticleOne h2 {
-    font-size: 2em;
-    margin: 10px 0;
 }
 
 .filterButtonsOne {
@@ -74,6 +78,8 @@ body {
     padding: 16px;
     border-radius: 8px;
     text-align: center;
+    color: var(--articleColor);
+    background-color: var(--articleBgColor);
 }
 
 .otherArticlesOne img {
@@ -102,6 +108,8 @@ body {
     padding: 10px 0;
     width: 100%;
     position: relative;
+    color: var(--footerColor);
+    background-color: var(--footerBgColor);
 }
 
 .colorButtonsOne {

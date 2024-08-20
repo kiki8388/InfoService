@@ -1,7 +1,3 @@
-#root {
-    background-color: #fff;
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,10 +9,12 @@ body {
     flex-direction: row;
     min-height: 100vh;
     box-sizing: border-box;
+    background-color: var(--bgColor);
 }
 
 .headerTwo {
-    color: white;
+    color: var(--headerColor);
+    background-color: var(--headerBgColor);
     text-align: center;
     width: 20%;
     min-height: 100vh;
@@ -41,6 +39,21 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
+}
+
+.filterButtonsTwo button {
+    background-color: var(--navButtonBgColor);
+    color: var(--navButtonColor);
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.filterButtonsTwo button:hover {
+    background-color: var(--navButtonBgHoverColor);
 }
 
 .headerNavTwo {
@@ -92,6 +105,9 @@ body {
     padding: 16px;
     border-radius: 8px;
     text-align: center;
+    cursor: pointer;
+    color: var(--articleColor);
+    background-color: var(--articleBgColor);
 }
 
 .otherArticlesTwo img {
@@ -121,7 +137,8 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #333333; /* Ensure background color matches with header */
+    color: var(--footerColor);
+    background-color: var(--footerBgColor);
 }
 
 .colorButtonsTwo {

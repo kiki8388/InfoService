@@ -110,7 +110,12 @@ const HomeThree: React.FC = () => {
     document.documentElement.style.setProperty('--articleBgColor', '#f4f4f4');
     document.documentElement.style.setProperty('--articleBgHoverColor', '#b9b9b9');
     document.documentElement.style.setProperty('--footerColor', 'white');
-    document.documentElement.style.setProperty('--footerBgColor', '#333333');  
+    document.documentElement.style.setProperty('--footerBgColor', '#333333');
+    document.documentElement.style.setProperty('--popupColor', 'black');
+    document.documentElement.style.setProperty('--popupBgColor', 'white');
+    document.documentElement.style.setProperty('--popupCloseColor', 'white');
+    document.documentElement.style.setProperty('--popupCloseBgColor', '#333');
+    document.documentElement.style.setProperty('--popupCloseBgHoverColor', '#272727');  
   };
 
   const chooseColorSchemeTwo = () => {
@@ -119,7 +124,12 @@ const HomeThree: React.FC = () => {
     document.documentElement.style.setProperty('--articleBgColor', '#b9b9b9');
     document.documentElement.style.setProperty('--articleBgHoverColor', '#f4f4f4');
     document.documentElement.style.setProperty('--footerColor', 'black');
-    document.documentElement.style.setProperty('--footerBgColor', '#333333'); 
+    document.documentElement.style.setProperty('--footerBgColor', '#272727');
+    document.documentElement.style.setProperty('--popupColor', 'white');
+    document.documentElement.style.setProperty('--popupBgColor', 'black');
+    document.documentElement.style.setProperty('--popupCloseColor', 'black');
+    document.documentElement.style.setProperty('--popupCloseBgColor', '#272727');
+    document.documentElement.style.setProperty('--popupCloseBgHoverColor', '#333'); 
   };
 
   const chooseColorSchemeThree = () => {
@@ -128,7 +138,12 @@ const HomeThree: React.FC = () => {
     document.documentElement.style.setProperty('--articleBgColor', '#b9b9b9');
     document.documentElement.style.setProperty('--articleBgHoverColor', '#f4f4f4');
     document.documentElement.style.setProperty('--footerColor', 'black');
-    document.documentElement.style.setProperty('--footerBgColor', '#333333'); 
+    document.documentElement.style.setProperty('--footerBgColor', '#333333');
+    document.documentElement.style.setProperty('--popupColor', 'black');
+    document.documentElement.style.setProperty('--popupBgColor', 'white');
+    document.documentElement.style.setProperty('--popupCloseColor', 'white');
+    document.documentElement.style.setProperty('--popupCloseBgColor', '#333');
+    document.documentElement.style.setProperty('--popupCloseBgHoverColor', '#272727'); 
   };
 
   const chooseColorSchemeFour = () => {
@@ -137,7 +152,12 @@ const HomeThree: React.FC = () => {
     document.documentElement.style.setProperty('--articleBgColor', '#b9b9b9');
     document.documentElement.style.setProperty('--articleBgHoverColor', '#f4f4f4');
     document.documentElement.style.setProperty('--footerColor', 'black');
-    document.documentElement.style.setProperty('--footerBgColor', '#333333'); 
+    document.documentElement.style.setProperty('--footerBgColor', '#333333');
+    document.documentElement.style.setProperty('--popupColor', 'black');
+    document.documentElement.style.setProperty('--popupBgColor', 'white');
+    document.documentElement.style.setProperty('--popupCloseColor', 'white');
+    document.documentElement.style.setProperty('--popupCloseBgColor', '#333');
+    document.documentElement.style.setProperty('--popupCloseBgHoverColor', '#272727');
   };
 
   return (
