@@ -97,13 +97,23 @@ html, body {
     width: 100%;
 }
 
-.MuiButtonBase-root.MuiButton-root {
+.addCommentContainerTwoArt .MuiButtonBase-root.MuiButton-root {
     width: 100%;
     color: var(--backButtonColor);
     background-color: var(--backButtonBgColor);
 }
 
-.MuiButtonBase-root.MuiButton-root:hover {
+.addCommentContainerTwoArt .MuiButtonBase-root.MuiButton-root:hover {
+    background-color: var(--backButtonBgHoverColor);
+}
+
+.backButtonContainerTwoArt .MuiButtonBase-root.MuiButton-root {
+    width: 100%;
+    color: var(--backButtonColor);
+    background-color: var(--backButtonBgColor);
+}
+
+.backButtonContainerTwoArt .MuiButtonBase-root.MuiButton-root:hover {
     background-color: var(--backButtonBgHoverColor);
 }
 

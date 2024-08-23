@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import "./HomeOne.css";
+import "./HomeFour.css";
 
 interface PostData {
   id: string;
@@ -12,7 +12,7 @@ interface PostData {
   views: number;
 }
 
-const HomeOne: React.FC = () => {
+const HomeFour: React.FC = () => {
   const apiURL = "https://localhost:7083/api";
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
@@ -144,12 +144,12 @@ const HomeOne: React.FC = () => {
   };
 
   return (
-    <div className='containerOne'>
-      <header className="headerOne">
-        <div className="logoOne">
+    <div className='containerFour'>
+      <header className="headerFour">
+        <div className="logoFour">
           <h1>InfoService</h1>
         </div>
-        <nav className="filterButtonsOne">
+        <nav className="filterButtonsFour">
           <button onClick={() => filterPostsByCategory('All')}>All</button>
           <button onClick={() => filterPostsByCategory('Sports')}>Sports</button>
           <button onClick={() => filterPostsByCategory('World')}>World</button>
@@ -160,8 +160,8 @@ const HomeOne: React.FC = () => {
           <button onClick={() => filterPostsByCategory('Opinion')}>Opinion</button>
         </nav>
       </header>
-      <div className='headerNavOne' style={{ visibility: visible ? 'visible' : 'hidden', opacity: visible ? 1 : 0}}>
-        <nav className='filterButtonsOne'>
+      <div className='headerNavFour' style={{ visibility: visible ? 'visible' : 'hidden', opacity: visible ? 1 : 0}}>
+        <nav className='filterButtonsFour'>
           <button onClick={() => filterPostsByCategory('All')}>All</button>
           <button onClick={() => filterPostsByCategory('Sports')}>Sports</button>
           <button onClick={() => filterPostsByCategory('World')}>World</button>
@@ -172,14 +172,14 @@ const HomeOne: React.FC = () => {
           <button onClick={() => filterPostsByCategory('Opinion')}>Opinion</button>
         </nav>
       </div>
-      <main className='mainOne'>
-        <section className="otherArticlesOne">
+      <main className='mainFour'>
+        <section className="otherArticlesFour">
           {errorMessage && <div className="errorMessage">{errorMessage}</div>}
           {filteredPosts.length === 0 ? (
-            <div className="noArticlesOne">No articles</div>
+            <div className="noArticlesFour">No articles</div>
           ) : (
             filteredPosts.map(post => (
-              <article className='articleOne' key={post.id} onClick={() => handleArticleClick(post)}>
+              <article className='articleFour' key={post.id} onClick={() => handleArticleClick(post)}>
                 <img src="https://via.placeholder.com/400x200" alt="Article Image" />
                 <h3>{post.title}</h3>
                 <p>{truncateContent(post.content, 20)}</p>
@@ -188,10 +188,10 @@ const HomeOne: React.FC = () => {
           )}
         </section>
       </main>
-      <footer className="footerOne">
-        <div className='fillerFooterOne'></div>
+      <footer className="footerFour">
+        <div className='fillerFooterFour'></div>
         <p>&copy; 2024 News Website. All rights reserved.</p>
-        <div className="colorButtonsOne">
+        <div className="colorButtonsFour">
           <button onClick={chooseColorSchemeOne}></button>
           <button onClick={chooseColorSchemeTwo}></button>
           <button onClick={chooseColorSchemeThree}></button>
@@ -202,4 +202,4 @@ const HomeOne: React.FC = () => {
   );
 }
 
-export default HomeOne;
+export default HomeFour;

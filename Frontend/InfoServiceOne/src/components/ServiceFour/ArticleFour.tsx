@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import "./ArticleOne.css";
+import "./ArticleFour.css";
 
 interface ArticleData {
   id: string;
@@ -12,7 +12,7 @@ interface ArticleData {
   views: number;
 }
 
-const ArticleOne: React.FC = () => {
+const ArticleFour: React.FC = () => {
   const location = useLocation();
   const articleData = location.state as ArticleData;
   const navigate = useNavigate();
@@ -72,26 +72,26 @@ const ArticleOne: React.FC = () => {
   };
 
   return (
-    <div className='containerOneArt'>
-    <header className='headerOneArt'>
-        <div className="logoOneArt">
+    <div className='containerFourArt'>
+    <header className='headerFourArt'>
+        <div className="logoFourArt">
             <h1>InfoService</h1>
         </div>
     </header>
     
-      <div className="articleContainerOneArt">
+      <div className="articleContainerFourArt">
         <h1>{articleData.title}</h1>
         <p>{articleData.content}</p>
         <p>Category: {articleData.category}</p>
         <p>Author: {articleData.author}</p>
         <p>Views: {articleData.views}</p>
       </div>
-      <div className='backButtonContainerOneArt'>
+      <div className='backButtonContainerFourArt'>
           <Button className="backButton" variant='contained' onClick={() => navigate(-1)}>Back</Button>
       </div>
    
-    <footer className='footerOneArt'>
-      <div className="colorButtonsOneArt">
+    <footer className='footerFourArt'>
+      <div className="colorButtonsFourArt">
         <button onClick={chooseColorSchemeOne}></button>
         <button onClick={chooseColorSchemeTwo}></button>
         <button onClick={chooseColorSchemeThree}></button>
@@ -103,4 +103,4 @@ const ArticleOne: React.FC = () => {
   );
 };
 
-export default ArticleOne;
+export default ArticleFour;

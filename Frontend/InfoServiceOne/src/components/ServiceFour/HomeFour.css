@@ -5,7 +5,7 @@ body {
     height: 100%;
 }
 
-.containerOne {
+.containerFour {
     background-color: var(--bgColor);
     min-height: 100vh;
     display: flex;
@@ -13,28 +13,28 @@ body {
     position: relative;
 }
 
-.headerOne {
+.headerFour {
     color: var(--headerColor);
     background-color: var(--headerBgColor);
     padding: 10px 0;
     text-align: center;
 }
 
-.headerOne .logoOne {
+.headerFour .logoFour {
     height: 20%;
 }
 
-.headerOne .logoOne h1 {
+.headerFour .logoFour h1 {
     margin: 0;
 }
 
-.filterButtonsOne {
+.filterButtonsFour {
     width: 100%;
     padding: 10px 0;
     text-align: center;
 }
 
-.filterButtonsOne button {
+.filterButtonsFour button {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -45,11 +45,11 @@ body {
     background-color: var(--navButtonBgColor);
 }
 
-.filterButtonsOne button:hover {
+.filterButtonsFour button:hover {
     background-color: var(--navButtonBgHoverColor);
 }
 
-.headerNavOne {
+.headerNavFour {
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -61,24 +61,24 @@ body {
     background-color: var(--headerBgColor);
 }
 
-.mainOne {
+.mainFour {
     padding: 20px;
     padding-top: 20px; /* Adjust padding to avoid content being hidden behind fixed nav */
     flex: 1;
 }
 
-.filterButtonsOne {
+.filterButtonsFour {
     display: flex;
     justify-content: center;
 }
 
-.otherArticlesOne {
+.otherArticlesFour {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
 
-.otherArticlesOne .articleOne {
+.otherArticlesFour .articleFour {
     padding: 16px;
     border-radius: 8px;
     text-align: center;
@@ -86,12 +86,12 @@ body {
     background-color: var(--articleBgColor);
 }
 
-.otherArticlesOne img {
+.otherArticlesFour img {
     width: 100%;
     height: auto;
 }
 
-.noArticlesOne {
+.noArticlesFour {
     grid-column: 1 / -1; /* Span all columns */
     display: flex;
     justify-content: center;
@@ -106,7 +106,7 @@ body {
     margin-bottom: 20px;
 }
 
-.footerOne {
+.footerFour {
     text-align: center;
     padding: 10px 0;
     width: 100%;
@@ -117,11 +117,11 @@ body {
     background-color: var(--footerBgColor);
 }
 
-.fillerFooterOne {
+.fillerFooterFour {
     margin-left: 17%;
 }
 
-.colorButtonsOne {
+.colorButtonsFour {
     display: flex;
     justify-content: flex-end; /* Align buttons to the right */
     right: 20px;
@@ -129,7 +129,7 @@ body {
     margin-right: 2%;
 }
 
-.colorButtonsOne button {
+.colorButtonsFour button {
     width: 40px; /* Set width and height to create square buttons */
     height: 40px;
     border: none;
@@ -141,6 +141,6 @@ body {
     color: white;
 }
 
-.colorButtonsOne button:hover {
+.colorButtonsFour button:hover {
     background-color: #272727;
 }

@@ -5,6 +5,7 @@ import Start from "./components/Home/Start";
 import RoutesOne from "./components/ServiceOne/RoutesOne";
 import RoutesTwo from "./components/ServiceTwo/RoutesTwo";
 import RoutesThree from "./components/ServiceThree/RoutesThree";
+import RoutesFour from "./components/ServiceFour/RoutesFour";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/homeone/*" element={<RoutesOne />} />
         <Route path="/hometwo/*" element={<RoutesTwo />} />
         <Route path="/homethree/*" element={<RoutesThree />} />
+        <Route path="/homefour/*" element={<RoutesFour />} />
         <Route path="*" element={<NotExist />} />
       </Routes>      
     </>
