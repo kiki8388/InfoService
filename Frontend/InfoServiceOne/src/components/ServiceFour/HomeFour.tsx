@@ -18,14 +18,19 @@ const HomeFour: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [visible, setVisible] = useState(false);
   const [postsData, setPostsData] = useState<Array<PostData>>([]);
-  const [filteredPosts, setFilteredPosts] = useState<Array<PostData>>([]);
+  const [sportsPosts, setSportsPosts] = useState<Array<PostData>>([]);
+  const [worldPosts, setWorldPosts] = useState<Array<PostData>>([]);
+  const [politicsPosts, setPoliticsPosts] = useState<Array<PostData>>([]);
+  const [businessPosts, setBusinessPosts] = useState<Array<PostData>>([]);
+  const [technologyPosts, setTechnologyPosts] = useState<Array<PostData>>([]);
+  const [artsPosts, setArtsPosts] = useState<Array<PostData>>([]);
+  const [opinionPosts, setOpinionPosts] = useState<Array<PostData>>([]);
 
   const handlePosts = async () => {
     setPostsData([]);
     try {
       const response = await axios.get(`${apiURL}/Post/GetAll`);
       setPostsData(response.data);
-      setFilteredPosts(response.data); // Initialize filtered posts
     } catch (error: any) {
       if (error.response) {
         console.log(error.response);
@@ -42,6 +47,10 @@ const HomeFour: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    filterPostsByCategory();
+  }, [postsData]);
+
+  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setVisible(true);
@@ -56,12 +65,14 @@ const HomeFour: React.FC = () => {
     };
   }, []);
 
-  const filterPostsByCategory = (category: string) => {
-    if (category === 'All') {
-      setFilteredPosts(postsData);
-    } else {
-      setFilteredPosts(postsData.filter(post => post.category === category));
-    }
+  const filterPostsByCategory = () => {
+    setSportsPosts(postsData.filter(post => post.category === 'Sports'));
+    setWorldPosts(postsData.filter(post => post.category === 'World'));
+    setPoliticsPosts(postsData.filter(post => post.category === 'Politics'));
+    setBusinessPosts(postsData.filter(post => post.category === 'Business'));
+    setTechnologyPosts(postsData.filter(post => post.category === 'Technology'));
+    setArtsPosts(postsData.filter(post => post.category === 'Arts'));
+    setOpinionPosts(postsData.filter(post => post.category === 'Opinion'));
   };
 
   const handleArticleClick = async (post: PostData) => {
@@ -149,43 +160,121 @@ const HomeFour: React.FC = () => {
         <div className="logoFour">
           <h1>InfoService</h1>
         </div>
-        <nav className="filterButtonsFour">
-          <button onClick={() => filterPostsByCategory('All')}>All</button>
-          <button onClick={() => filterPostsByCategory('Sports')}>Sports</button>
-          <button onClick={() => filterPostsByCategory('World')}>World</button>
-          <button onClick={() => filterPostsByCategory('Politics')}>Politics</button>
-          <button onClick={() => filterPostsByCategory('Business')}>Business</button>
-          <button onClick={() => filterPostsByCategory('Technology')}>Technology</button>
-          <button onClick={() => filterPostsByCategory('Arts')}>Arts</button>
-          <button onClick={() => filterPostsByCategory('Opinion')}>Opinion</button>
-        </nav>
       </header>
-      <div className='headerNavFour' style={{ visibility: visible ? 'visible' : 'hidden', opacity: visible ? 1 : 0}}>
-        <nav className='filterButtonsFour'>
-          <button onClick={() => filterPostsByCategory('All')}>All</button>
-          <button onClick={() => filterPostsByCategory('Sports')}>Sports</button>
-          <button onClick={() => filterPostsByCategory('World')}>World</button>
-          <button onClick={() => filterPostsByCategory('Politics')}>Politics</button>
-          <button onClick={() => filterPostsByCategory('Business')}>Business</button>
-          <button onClick={() => filterPostsByCategory('Technology')}>Technology</button>
-          <button onClick={() => filterPostsByCategory('Arts')}>Arts</button>
-          <button onClick={() => filterPostsByCategory('Opinion')}>Opinion</button>
-        </nav>
-      </div>
       <main className='mainFour'>
         <section className="otherArticlesFour">
-          {errorMessage && <div className="errorMessage">{errorMessage}</div>}
-          {filteredPosts.length === 0 ? (
-            <div className="noArticlesFour">No articles</div>
-          ) : (
-            filteredPosts.map(post => (
-              <article className='articleFour' key={post.id} onClick={() => handleArticleClick(post)}>
-                <img src="https://via.placeholder.com/400x200" alt="Article Image" />
-                <h3>{post.title}</h3>
-                <p>{truncateContent(post.content, 20)}</p>
-              </article>
-            ))
-          )}
+        <div className='articleCategoryContainerFour'>
+            <h1>Sports</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            <div className='articleListFour'>
+            {sportsPosts.length === 0 ? (
+              <div className="noArticlesFour">No articles</div>
+            ) : (
+              sportsPosts.map(post => (
+                <article className='articleFour' key={post.id} onClick={() => handleArticleClick(post)}>
+                  <img src="https://via.placeholder.com/400x200" alt="Article Image" />
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+            </div>
+          </div>
+          <div className='articleCategoryContainerFour'>
+            <h1>World</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            <div className='articleListFour'>
+            {worldPosts.length === 0 ? (
+              <div className="noArticlesFour">No articles</div>
+            ) : (
+              worldPosts.map(post => (
+                <article className='articleFour' key={post.id} onClick={() => handleArticleClick(post)}>
+                  <img src="https://via.placeholder.com/400x200" alt="Article Image" />
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+            </div>
+          </div>
+          <div className='articleCategoryContainerFour'>
+            <h1>Politics</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            <div className='articleListFour'>
+            {politicsPosts.length === 0 ? (
+              <div className="noArticlesFour">No articles</div>
+            ) : (
+              worldPosts.map(post => (
+                <article className='articleFour' key={post.id} onClick={() => handleArticleClick(post)}>
+                  <img src="https://via.placeholder.com/400x200" alt="Article Image" />
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+            </div>
+          </div>
+          <div className='articleCategoryContainerFour'>
+            <h1>Business</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            <div className='articleListFour'>
+            {businessPosts.length === 0 ? (
+              <div className="noArticlesFour">No articles</div>
+            ) : (
+              businessPosts.map(post => (
+                <article className='articleFour' key={post.id} onClick={() => handleArticleClick(post)}>
+                  <img src="https://via.placeholder.com/400x200" alt="Article Image" />
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+            </div>
+          </div>
+          <div className='articleCategoryContainerFour'>
+            <h1>Technology</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            <div className='articleListFour'>
+            {technologyPosts.length === 0 ? (
+              <div className="noArticlesFour">No articles</div>
+            ) : (
+              technologyPosts.map(post => (
+                <article className='articleFour' key={post.id} onClick={() => handleArticleClick(post)}>
+                  <img src="https://via.placeholder.com/400x200" alt="Article Image" />
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+            </div>
+          </div>
+          <div className='articleCategoryContainerFour'>
+            <h1>Arts</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            <div className='articleListFour'>
+            {artsPosts.length === 0 ? (
+              <div className="noArticlesFour">No articles</div>
+            ) : (
+              artsPosts.map(post => (
+                <article className='articleFour' key={post.id} onClick={() => handleArticleClick(post)}>
+                  <img src="https://via.placeholder.com/400x200" alt="Article Image" />
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+            </div>
+          </div>
+          <div className='articleCategoryContainerFour'>
+            <h1>Opinion</h1>
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            <div className='articleListFour'>
+            {opinionPosts.length === 0 ? (
+              <div className="noArticlesFour">No articles</div>
+            ) : (
+              opinionPosts.map(post => (
+                <article className='articleFour' key={post.id} onClick={() => handleArticleClick(post)}>
+                  <img src="https://via.placeholder.com/400x200" alt="Article Image" />
+                  <h3>{post.title}</h3>
+                </article>
+              ))
+            )}
+            </div>
+          </div>
         </section>
       </main>
       <footer className="footerFour">
