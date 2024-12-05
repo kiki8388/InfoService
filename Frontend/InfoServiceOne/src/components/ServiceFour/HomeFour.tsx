@@ -103,6 +103,7 @@ const HomeFour: React.FC = () => {
   };
 
   const chooseColorSchemeOne = () => {
+    document.documentElement.style.setProperty('--fontColor', 'black');
     document.documentElement.style.setProperty('--bgColor', 'white');
     document.documentElement.style.setProperty('--headerColor', 'white');
     document.documentElement.style.setProperty('--headerBgColor', '#333');
@@ -122,6 +123,7 @@ const HomeFour: React.FC = () => {
   };
 
   const chooseColorSchemeTwo = () => {
+    document.documentElement.style.setProperty('--fontColor', 'white');
     document.documentElement.style.setProperty('--bgColor', '#121212'); 
     document.documentElement.style.setProperty('--headerColor', '#BB86FC'); 
     document.documentElement.style.setProperty('--headerBgColor', '#1F1B24');
@@ -141,6 +143,7 @@ const HomeFour: React.FC = () => {
 };
 
 const chooseColorSchemeThree = () => {
+    document.documentElement.style.setProperty('--fontColor', 'black');
     document.documentElement.style.setProperty('--bgColor', '#FAF3DD');
     document.documentElement.style.setProperty('--headerColor', '#F76C6C');
     document.documentElement.style.setProperty('--headerBgColor', '#355070');
@@ -160,6 +163,7 @@ const chooseColorSchemeThree = () => {
 };
 
 const chooseColorSchemeFour = () => {
+    document.documentElement.style.setProperty('--fontColor', 'black');
     document.documentElement.style.setProperty('--bgColor', '#F7F9F9');
     document.documentElement.style.setProperty('--headerColor', '#FF6F59');
     document.documentElement.style.setProperty('--headerBgColor', '#22223B');
@@ -305,10 +309,10 @@ const chooseColorSchemeFour = () => {
         <div className='fillerFooterFour'></div>
         <p>&copy; 2024 News Website. All rights reserved.</p>
         <div className="colorButtonsFour">
-          <button onClick={chooseColorSchemeOne}></button>
-          <button onClick={chooseColorSchemeTwo}></button>
-          <button onClick={chooseColorSchemeThree}></button>
-          <button onClick={chooseColorSchemeFour}></button>
+          <button onClick={chooseColorSchemeOne}>W</button>
+          <button onClick={chooseColorSchemeTwo}>D</button>
+          <button onClick={chooseColorSchemeThree}>P</button>
+          <button onClick={chooseColorSchemeFour}>C</button>
         </div>
       </footer>
     </div>

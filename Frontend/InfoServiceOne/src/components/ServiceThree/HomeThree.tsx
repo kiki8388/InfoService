@@ -105,6 +105,7 @@ const HomeThree: React.FC = () => {
   };
 
   const chooseColorSchemeOne = () => {
+    document.documentElement.style.setProperty('--fontColor', 'black');
     document.documentElement.style.setProperty('--bgColor', 'white');
     document.documentElement.style.setProperty('--articleColor', 'black');
     document.documentElement.style.setProperty('--articleBgColor', '#f4f4f4');
@@ -119,45 +120,48 @@ const HomeThree: React.FC = () => {
   };
 
   const chooseColorSchemeTwo = () => {
-    document.documentElement.style.setProperty('--bgColor', 'black'); 
-    document.documentElement.style.setProperty('--articleColor', 'white');
-    document.documentElement.style.setProperty('--articleBgColor', '#b9b9b9');
-    document.documentElement.style.setProperty('--articleBgHoverColor', '#f4f4f4');
-    document.documentElement.style.setProperty('--footerColor', 'black');
-    document.documentElement.style.setProperty('--footerBgColor', '#272727');
-    document.documentElement.style.setProperty('--popupColor', 'white');
-    document.documentElement.style.setProperty('--popupBgColor', 'black');
-    document.documentElement.style.setProperty('--popupCloseColor', 'black');
-    document.documentElement.style.setProperty('--popupCloseBgColor', '#272727');
-    document.documentElement.style.setProperty('--popupCloseBgHoverColor', '#333');
+    document.documentElement.style.setProperty('--fontColor', 'white');
+    document.documentElement.style.setProperty('--bgColor', '#121212'); 
+    document.documentElement.style.setProperty('--articleColor', '#E0E0E0');
+    document.documentElement.style.setProperty('--articleBgColor', '#1E1E1E');
+    document.documentElement.style.setProperty('--articleBgHoverColor', '#292929');
+    document.documentElement.style.setProperty('--footerColor', '#BB86FC');
+    document.documentElement.style.setProperty('--footerBgColor', '#1F1B24');
+    document.documentElement.style.setProperty('--popupColor', '#E0E0E0');
+    document.documentElement.style.setProperty('--popupBgColor', '#1E1E1E');
+    document.documentElement.style.setProperty('--popupCloseColor', '#BB86FC');
+    document.documentElement.style.setProperty('--popupCloseBgColor', '#333333');
+    document.documentElement.style.setProperty('--popupCloseBgHoverColor', '#424242');
 };
 
 const chooseColorSchemeThree = () => {
-    document.documentElement.style.setProperty('--bgColor', 'black');
-    document.documentElement.style.setProperty('--articleColor', 'white');
-    document.documentElement.style.setProperty('--articleBgColor', '#b9b9b9');
-    document.documentElement.style.setProperty('--articleBgHoverColor', '#f4f4f4');
-    document.documentElement.style.setProperty('--footerColor', 'black');
-    document.documentElement.style.setProperty('--footerBgColor', '#333333');
-    document.documentElement.style.setProperty('--popupColor', 'black');
-    document.documentElement.style.setProperty('--popupBgColor', 'white');
-    document.documentElement.style.setProperty('--popupCloseColor', 'white');
-    document.documentElement.style.setProperty('--popupCloseBgColor', '#333');
-    document.documentElement.style.setProperty('--popupCloseBgHoverColor', '#272727');
+    document.documentElement.style.setProperty('--fontColor', 'black');
+    document.documentElement.style.setProperty('--bgColor', '#FAF3DD');
+    document.documentElement.style.setProperty('--articleColor', '#355070');
+    document.documentElement.style.setProperty('--articleBgColor', '#FFFFFF');
+    document.documentElement.style.setProperty('--articleBgHoverColor', '#EAEAEA');
+    document.documentElement.style.setProperty('--footerColor', '#F76C6C');
+    document.documentElement.style.setProperty('--footerBgColor', '#355070');
+    document.documentElement.style.setProperty('--popupColor', '#355070');
+    document.documentElement.style.setProperty('--popupBgColor', '#FFFFFF');
+    document.documentElement.style.setProperty('--popupCloseColor', '#F76C6C');
+    document.documentElement.style.setProperty('--popupCloseBgColor', '#A1C181');
+    document.documentElement.style.setProperty('--popupCloseBgHoverColor', '#70A288');
 };
 
 const chooseColorSchemeFour = () => {
-    document.documentElement.style.setProperty('--bgColor', 'black'); 
-    document.documentElement.style.setProperty('--articleColor', 'white');
-    document.documentElement.style.setProperty('--articleBgColor', '#b9b9b9');
-    document.documentElement.style.setProperty('--articleBgHoverColor', '#f4f4f4');
-    document.documentElement.style.setProperty('--footerColor', 'black');
-    document.documentElement.style.setProperty('--footerBgColor', '#333333');
-    document.documentElement.style.setProperty('--popupColor', 'black');
-    document.documentElement.style.setProperty('--popupBgColor', 'white');
-    document.documentElement.style.setProperty('--popupCloseColor', 'white');
-    document.documentElement.style.setProperty('--popupCloseBgColor', '#333');
-    document.documentElement.style.setProperty('--popupCloseBgHoverColor', '#272727');
+    document.documentElement.style.setProperty('--fontColor', 'black');
+    document.documentElement.style.setProperty('--bgColor', '#F7F9F9'); 
+    document.documentElement.style.setProperty('--articleColor', '#22223B');
+    document.documentElement.style.setProperty('--articleBgColor', '#FFFFFF');
+    document.documentElement.style.setProperty('--articleBgHoverColor', '#FBEDE9');
+    document.documentElement.style.setProperty('--footerColor', '#4A90E2');
+    document.documentElement.style.setProperty('--footerBgColor', '#22223B');
+    document.documentElement.style.setProperty('--popupColor', '#22223B');
+    document.documentElement.style.setProperty('--popupBgColor', '#FFFFFF');
+    document.documentElement.style.setProperty('--popupCloseColor', '#4A90E2');
+    document.documentElement.style.setProperty('--popupCloseBgColor', '#FF6F59');
+    document.documentElement.style.setProperty('--popupCloseBgHoverColor', '#D7263D');
 };
 
   return (
@@ -264,10 +268,10 @@ const chooseColorSchemeFour = () => {
         </div>
         <p>&copy; 2024 News Website. All rights reserved.</p>
         <div className="colorButtonsThree">
-          <button onClick={chooseColorSchemeOne}></button>
-          <button onClick={chooseColorSchemeTwo}></button>
-          <button onClick={chooseColorSchemeThree}></button>
-          <button onClick={chooseColorSchemeFour}></button>
+          <button onClick={chooseColorSchemeOne}>W</button>
+          <button onClick={chooseColorSchemeTwo}>D</button>
+          <button onClick={chooseColorSchemeThree}>P</button>
+          <button onClick={chooseColorSchemeFour}>C</button>
         </div>
       </footer>
       {isPopupVisible && selectedPost && (

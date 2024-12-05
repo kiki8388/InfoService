@@ -9,6 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
+    color: var(--fontColor);
     background-color: var(--bgColor);
 }
 
@@ -90,10 +91,12 @@ body {
     font-size: 16px;
     transition: background-color 0.3s;
     margin: 0 5px;
-    color: white;
+    color: black;
+    background-color: white;
 }
 
 .colorButtonsThree button:hover {
+    color: white;
     background-color: #272727;
 }
 

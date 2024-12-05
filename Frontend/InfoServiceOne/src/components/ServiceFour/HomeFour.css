@@ -6,6 +6,7 @@ body {
 }
 
 .containerFour {
+    color: var(--fontColor);
     background-color: var(--bgColor);
     min-height: 100vh;
     display: flex;
@@ -154,9 +155,11 @@ body {
     font-size: 16px;
     transition: background-color 0.3s;
     margin: 0 5px;
-    color: white;
+    color: black;
+    background-color: white;
 }
 
 .colorButtonsFour button:hover {
+    color: white;
     background-color: #272727;
 }
