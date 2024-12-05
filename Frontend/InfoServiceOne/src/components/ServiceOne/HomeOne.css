@@ -86,6 +86,10 @@ body {
     background-color: var(--articleBgColor);
 }
 
+.otherArticlesOne .articleOne:hover {
+    background-color: var(--articleBgHoverColor);
+}
+
 .otherArticlesOne img {
     width: 100%;
     height: auto;
