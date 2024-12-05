@@ -1,4 +1,5 @@
 using InfoServiceAPI.Data;
+using InfoServiceAPI.Seeder;
 using InfoServiceAPI.Services.Comments;
 using InfoServiceAPI.Services.Posts;
 using Microsoft.EntityFrameworkCore;
@@ -25,9 +26,15 @@ builder.Services.AddCors(p => p.AddPolicy("MyPolicy", build =>
 
 builder.Services
     .AddScoped<IPostServices, PostServices>()
-    .AddScoped<ICommentServices, CommentServices>();
+    .AddScoped<ICommentServices, CommentServices>()
+    .AddScoped<Seeder>();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    scope.ServiceProvider.GetRequiredService<Seeder>().Seed();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

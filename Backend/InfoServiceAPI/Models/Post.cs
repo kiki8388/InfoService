@@ -19,6 +19,10 @@
             Comments = new List<Comment>();
         }
 
+        public Post()
+        {
+        }
+
         public void AddComment(Comment comment)
         {
             Comments.Add(comment);
