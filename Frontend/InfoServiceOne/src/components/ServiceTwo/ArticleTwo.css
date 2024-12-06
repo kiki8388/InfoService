@@ -19,10 +19,10 @@ html, body {
     text-align: center;
     width: 20%;
     position: fixed;
-    height: 100vh; /* Make sure the header spans the full viewport height */
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes footer to the bottom */
+    justify-content: space-between;
 }
 
 .headerTwoArt .logoTwoArt {

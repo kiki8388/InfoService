@@ -15,7 +15,7 @@ body {
 
 .mainThree {
     padding: 20px;
-    padding-top: 20px; /* Adjust padding to avoid content being hidden behind fixed nav */
+    padding-top: 20px; 
     flex: 1;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .noArticlesThree {
-    grid-column: 1 / -1; /* Span all columns */
+    grid-column: 1 / -1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,14 +76,14 @@ body {
 
 .colorButtonsThree {
     display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
+    justify-content: flex-end;
     right: 20px;
     bottom: 20px;
     margin-right: 2%;
 }
 
 .colorButtonsThree button {
-    width: 40px; /* Set width and height to create square buttons */
+    width: 40px;
     height: 40px;
     border: none;
     cursor: pointer;
@@ -100,20 +100,18 @@ body {
     background-color: #272727;
 }
 
-/* Nowa warstwa dla rozmycia tła */
 .background-blur {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Półprzezroczyste tło */
-    backdrop-filter: blur(5px); /* Efekt rozmycia */
-    z-index: 999; /* Warstwa poniżej pop-upu, ale powyżej treści strony */
-    pointer-events: none; /* Wyłączenie interakcji */
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    pointer-events: none;
 }
 
-/* Stylizacja dla pop-upu */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -123,7 +121,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Pop-up na górze */
+    z-index: 1000;
 }
 
 .popup-content {
@@ -133,10 +131,10 @@ body {
     border-radius: 8px;
     max-width: 500px;
     width: 90%;
-    max-height: 80vh; /* Ogranicz maksymalną wysokość pop-upu do 80% wysokości widoku */
-    overflow-y: auto; /* Dodaj pionowe przewijanie */
+    max-height: 80vh;
+    overflow-y: auto;
     position: relative;
-    z-index: 1001; /* Pop-up nad warstwą rozmycia */
+    z-index: 1001;
 }
 
 

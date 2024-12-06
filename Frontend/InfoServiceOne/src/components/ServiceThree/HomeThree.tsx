@@ -81,13 +81,11 @@ const HomeThree: React.FC = () => {
 
   const handleArticleClick = async (post: PostData) => {
     try {
-      // Increment the view count
       const updatedPost = { ...post, views: post.views + 1 };
       await axios.put(`${apiURL}/Post/UpdateViews/${post.id}`);
-      
-      // Set the selected post and show the popup
       setSelectedPost(updatedPost);
       setIsPopupVisible(true);
+      
     } catch (error: any) {
       if (error.response) {
         console.log(error.response);

@@ -118,10 +118,10 @@ const chooseColorSchemeFour = () => {
    
     <footer className='footerFourArt'>
       <div className="colorButtonsFourArt">
-        <button onClick={chooseColorSchemeOne}></button>
-        <button onClick={chooseColorSchemeTwo}></button>
-        <button onClick={chooseColorSchemeThree}></button>
-        <button onClick={chooseColorSchemeFour}></button>
+        <button onClick={chooseColorSchemeOne}>W</button>
+        <button onClick={chooseColorSchemeTwo}>D</button>
+        <button onClick={chooseColorSchemeThree}>P</button>
+        <button onClick={chooseColorSchemeFour}>C</button>
       </div>
       <p>&copy; 2024 News Website. All rights reserved.</p>
     </footer>

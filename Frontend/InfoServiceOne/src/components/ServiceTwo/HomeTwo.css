@@ -22,7 +22,7 @@ body {
     position: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes footer to the bottom */
+    justify-content: space-between;
 }
 
 .headerTwo .logoTwo {
@@ -69,7 +69,7 @@ body {
 
 .mainTwo {
     padding: 20px;
-    padding-top: 20px; /* Adjust padding to avoid content being hidden behind fixed nav */
+    padding-top: 20px;
     flex: 1;
     max-width: 80%;
     margin-left: 20%;
@@ -117,7 +117,7 @@ body {
 }
 
 .noArticlesTwo {
-    grid-column: 1 / -1; /* Span all columns */
+    grid-column: 1 / -1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,7 +148,7 @@ body {
 }
 
 .colorButtonsTwo button {
-    width: 40px; /* Set width and height to create square buttons */
+    width: 40px;
     height: 40px;
     border: none;
     cursor: pointer;

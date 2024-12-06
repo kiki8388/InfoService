@@ -25,7 +25,7 @@ const HomeTwo: React.FC = () => {
     try {
       const response = await axios.get(`${apiURL}/Post/GetAll`);
       setPostsData(response.data);
-      setFilteredPosts(response.data); // Initialize filtered posts
+      setFilteredPosts(response.data);
     } catch (error: any) {
       if (error.response) {
         console.log(error.response);
@@ -66,12 +66,10 @@ const HomeTwo: React.FC = () => {
 
   const handleArticleClick = async (post: PostData) => {
     try {
-      // Increment the view count
       const updatedPost = { ...post, views: post.views + 1 };
       await axios.put(`${apiURL}/Post/UpdateViews/${post.id}`);
-
-      // Navigate to the article page
       navigate(`article`, { state: updatedPost });
+
     } catch (error: any) {
       if (error.response) {
         console.log(error.response);

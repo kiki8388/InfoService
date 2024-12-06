@@ -7,8 +7,8 @@ html, body {
 .containerOneArt {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center the content vertically */
-    align-items: center; /* Center the content horizontally */
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     box-sizing: border-box;
     background-color: var(--bgColor);
@@ -65,7 +65,7 @@ html, body {
     width: 100%;
     background-color: var(--footerBgColor);
     position: relative;
-    margin-top: auto; /* Push the footer to the bottom */
+    margin-top: auto;
     padding: 10px 0;
 }
 
