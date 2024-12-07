@@ -110,6 +110,10 @@ body {
     flex-shrink: 0;
 }
 
+.articleCategoryContainerFour .articleFour:hover {
+    background-color: var(--articleBgHoverColor);
+}
+
 .articleCategoryContainerFour .noArticlesFour {
     display: flex;
     justify-content: center;

@@ -111,6 +111,10 @@ body {
     background-color: var(--articleBgColor);
 }
 
+.otherArticlesTwo article:hover {
+    background-color: var(--articleBgHoverColor);
+}
+
 .otherArticlesTwo img {
     width: 100%;
     height: auto;
