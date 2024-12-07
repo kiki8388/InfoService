@@ -101,10 +101,18 @@ html, body {
     background-color: var(--articleBgHoverColor);
 }
 
-.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-sizeMedium.MuiInputLabel-outlined.MuiFormLabel-colorPrimary.Mui-required.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-sizeMedium.MuiInputLabel-outlined.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root
-{
+.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-sizeMedium.MuiInputLabel-outlined.MuiFormLabel-colorPrimary.Mui-required.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-sizeMedium.MuiInputLabel-outlined.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
     color: var(--articleContainerColor);
 }
+
+.MuiTypography-root.MuiTypography-body2.css-1phucj-MuiTypography-root {
+    color: var(--articleContainerColor);
+}
+
+.MuiTypography-root.MuiTypography-body2.MuiListItemText-secondary.css-83ijpv-MuiTypography-root {
+    color: var(--articleContainerColor);
+}
+
 .addCommentContainerTwoArt .MuiButtonBase-root.MuiButton-root {
     width: 100%;
     color: var(--backButtonColor);
