@@ -107,7 +107,18 @@ const chooseColorSchemeFour = () => {
     
       <div className="articleContainerFourArt">
         <h1>{articleData.title}</h1>
+        <img src="https://via.placeholder.com/1400x400" alt="Article Image" />
         <p>{articleData.content}</p>
+        <div className="imageGrid">
+          {Array.from({ length: 12 }).map((_, index) => (
+            <img
+              key={index}
+              src={`https://via.placeholder.com/350x200`}
+              alt={`Article Image ${index + 1}`}
+              className="gridImage"
+            />
+          ))}
+        </div>
         <p>Category: {articleData.category}</p>
         <p>Author: {articleData.author}</p>
         <p>Views: {articleData.views}</p>
