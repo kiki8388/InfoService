@@ -83,8 +83,8 @@ const ArticleTwo: React.FC = () => {
     document.documentElement.style.setProperty('--backButtonColor', '#BB86FC');
     document.documentElement.style.setProperty('--backButtonBgColor', '#333333');
     document.documentElement.style.setProperty('--backButtonBgHoverColor', '#424242');
-    document.documentElement.style.setProperty('--commentsContainerColor', 'black');
-    document.documentElement.style.setProperty('--commentsContainerBgColor', 'white')
+    document.documentElement.style.setProperty('--commentsContainerColor', 'white');
+    document.documentElement.style.setProperty('--commentsContainerBgColor', '#1E1E1E')
 };
 
 const chooseColorSchemeThree = () => {
@@ -218,6 +218,7 @@ const chooseColorSchemeFour = () => {
           <form onSubmit={handleCreateComment}>
             <TextField
               id='author'
+              className='commentFormValue'
               label='Author'
               type='text'
               variant='outlined'
@@ -227,6 +228,7 @@ const chooseColorSchemeFour = () => {
             />
             <TextField
               id='content'
+              className='commentFormValue'
               label='Content'
               type='text'
               variant='outlined'
