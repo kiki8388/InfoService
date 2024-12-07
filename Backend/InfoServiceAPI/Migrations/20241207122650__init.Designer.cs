@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace InfoServiceAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240801203932_addComments")]
-    partial class addComments
+    [Migration("20241207122650__init")]
+    partial class _init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
