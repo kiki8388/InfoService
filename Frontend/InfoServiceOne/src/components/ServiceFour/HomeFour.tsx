@@ -109,7 +109,7 @@ const HomeFour: React.FC = () => {
     document.documentElement.style.setProperty('--navButtonBgHoverColor', '#272727');
     document.documentElement.style.setProperty('--articleColor', 'black');
     document.documentElement.style.setProperty('--articleBgColor', '#f4f4f4');
-    document.documentElement.style.setProperty('--articleBgHoverColor', '#f4f4f4');
+    document.documentElement.style.setProperty('--articleBgHoverColor', '#b9b9b9');
     document.documentElement.style.setProperty('--footerColor', 'white');
     document.documentElement.style.setProperty('--footerBgColor', '#333');
     document.documentElement.style.setProperty('--articleContainerColor', 'black');
