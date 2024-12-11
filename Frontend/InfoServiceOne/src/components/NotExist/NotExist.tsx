@@ -1,10 +1,4 @@
-import { useCookies } from 'react-cookie';
-import { useNavigate } from 'react-router-dom';
-
 const NotExist = () => {
-
-  const [cookies, setCookie, removeCookie] = useCookies(['user']);
-  const navigate = useNavigate();
 
   return (
     <>
