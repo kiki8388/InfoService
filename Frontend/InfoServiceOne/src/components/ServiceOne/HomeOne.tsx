@@ -127,7 +127,7 @@ const HomeOne: React.FC = () => {
     document.documentElement.style.setProperty('--backButtonColor', '#BB86FC');
     document.documentElement.style.setProperty('--backButtonBgColor', '#333333');
     document.documentElement.style.setProperty('--backButtonBgHoverColor', '#424242');
-};
+  };
 
 const chooseColorSchemeThree = () => {
     document.documentElement.style.setProperty('--fontColor', 'black');

@@ -8,8 +8,6 @@ const Start = () => {
 
     const navigate = useNavigate();
 
-    const path = window.location.pathname.split('/');
-
     return (
         <div className='startContainer'>
             <div className='ServiceChoose'>
